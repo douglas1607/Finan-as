@@ -447,9 +447,9 @@ body {
     .menu { padding: 15px 4%; }
     
     /* Faz o texto e a logo empilharem verticalmente no celular */
-    .introducao { 
+     .introducao { 
         padding: 60px 4%; 
-        flex-direction: column;
+        flex-direction: column-reverse; /* <--- Aqui acontece a mágica! */
         text-align: center;
     }
     .bloco-texto-intro {
