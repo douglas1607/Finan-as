@@ -9,7 +9,7 @@
 :root {
     /* Paleta completa em tons de verde (Financeiro Premium) */
     --verde-fundo-profundo: #051c14;
-    /* Verde escuro Old Money para o fundo global */
+    /* Verde escuro Old Money para o fundo global #051c14*/
     --verde-card: #0b2d21;
     /* Verde intermediário para os blocos */
     --verde-destaque: #00ff88;
