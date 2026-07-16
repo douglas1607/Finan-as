@@ -498,6 +498,31 @@ body {
     }
 }
 
+.menu-links .icone-menu {
+    display: none;
+}
+
+/* Quando a tela for menor que 768px (Celular e Tablet) */
+@media (max-width: 768px) {
+    /* Esconde o texto longo do menu */
+    .menu-links .texto-menu {
+        display: none;
+    }
+
+    /* Mostra apenas os ícones (as setinhas e a casinha) */
+    .menu-links .icone-menu {
+        display: inline-block;
+        font-size: 1.2rem; /* Tamanho confortável para clicar com o polegar */
+    }
+
+    /* Ajusta o espaçamento dos botões no celular para não ficarem colados */
+    .menu-links a {
+        padding: 10px 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 /* --- RESPONSIVIDADE (CELULAR E TABLET) --- */
 @media (max-width: 1024px) {
     .container-fundamentos { grid-template-columns: repeat(2, 1fr); }
