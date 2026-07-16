@@ -4,8 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-
-
 }
 
 :root {
@@ -19,6 +17,7 @@
     --verde-suave: #a7ffd5;
     /* Verde menta claro para textos secundários */
     --branco: #ffffff;
+    --borda-vidro: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -87,41 +86,30 @@ section:nth-of-type(1) {
     max-height: 650px;
     min-height: 650px;
     z-index: 2;
-
 }
 
 .descricao-hero {
     font-size: 1.7rem;
     color: var(--verde-suave);
     margin: 10px 0;
-    /* Mantém o espaço bom no computador */
     z-index: 2;
     position: relative;
-
 }
 
 /* O EFEITO ESFUMAÇADO DA FOTO (GRADIENT MASK) */
 section:nth-of-type(1) img {
     grid-column: 2;
     grid-row: 1 / span 5;
-
-    /* 1. Voltamos para o tamanho padrão fixo que não quebra as caixas */
     width: 500px;
     max-width: 900px;
     height: 100%;
     object-fit: cover;
-
     justify-self: center;
     position: relative;
     z-index: 1;
-    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 75%);
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
     mask-image: radial-gradient(rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
-
-    /* 2. O SEGREDO MÁGICO ESTÁ AQUI: */
     transform: scale(1.08) translateY(20px);
-    /* scale(1.15) -> Aumenta o tamanho da foto em 15% de forma independente (sem mexer nas divs).
-       translateY(40px) -> Move a foto exatamente 40 pixels para BAIXO.
-    */
 }
 
 section:nth-of-type(1) h1 {
@@ -131,43 +119,28 @@ section:nth-of-type(1) h1 {
     color: var(--branco);
     z-index: 2;
     position: relative;
-
-
-
-
-
 }
 
 /* --- CONTAINER QUE DEIXA OS ÍCONES ALINHADOS COM OS BOTÕES --- */
 .container-icones-linha {
     display: flex;
     justify-content: space-between;
-    /* Empurra o primeiro para o início e o segundo para o final */
     align-items: center;
-
-    /* O SEGREDO DO TAMANHO: Alinha com o final do segundo botão */
     max-width: 440px;
-    /* Altere esse número para mais ou para menos para casar perfeitamente com a bordinha do seu botão "Ver como funciona" */
-
     margin-top: 20px;
-    /* Espaço controlado abaixo dos botões */
     margin-bottom: 40px;
-    /* Proteção para NUNCA mais invadir a div de baixo */
     position: relative;
     z-index: 2;
 }
 
-/* --- AJUSTE LEVE NOS PARÁGRAFOS DOS ÍCONES --- */
 .texto-com-icone {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     color: var(--branco);
     font-size: 0.95rem;
-    /* Um pentelhésimo menor para caber bonito na linha */
     font-weight: 600;
     margin: 0;
-    /* Zeramos as margens antigas para o container controlar tudo */
 }
 
 .texto-com-icone i {
@@ -175,10 +148,7 @@ section:nth-of-type(1) h1 {
     font-size: 1.1rem;
 }
 
-
-
-
-/* --- ESTILIZAÇÃO DOS BOTÕES DA SEÇÃO PRINCIPAL (CORRIGIDO) --- */
+/* --- ESTILIZAÇÃO DOS BOTÕES DA SEÇÃO PRINCIPAL --- */
 section:nth-of-type(1) #btn-comecar-agora {
     display: inline-block;
     text-align: center;
@@ -223,7 +193,7 @@ section:nth-of-type(1) #btn-comecar-agora:hover {
     transform: translateY(-3px);
 }
 
-/* Link Ver Como Funciona (Estilo Botão Vazado) */
+/* Link Ver Como Funciona */
 section:nth-of-type(1) a.botao-apresentacao {
     background-color: transparent;
     color: var(--branco);
@@ -236,32 +206,7 @@ section:nth-of-type(1) a.botao-apresentacao:hover {
     transform: translateY(-3px);
 }
 
-/* Pequenas tags de destaque do texto inferior */
-section:nth-of-type(1) p:not(:of-type(1)) {
-    display: inline-block;
-    background-color: rgba(0, 255, 136, 0.1);
-    color: var(--verde-destaque);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-right: 10px;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    z-index: 2;
-}
-
-.container-icones-linha {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 470px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-
-/* --- SEÇÃO BENEFÍCIOS (APRENDA, PLANEJE, INVISTA...) --- */
+/* --- SEÇÃO BENEFÍCIOS --- */
 section:nth-of-type(2) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -298,24 +243,6 @@ section:nth-of-type(2) p {
     font-size: 0.9rem;
     color: var(--branco);
     z-index: 2;
-}
-
-/* Esconde todos os blocos de ferramentas por padrão */
-.conteudo-ferramenta {
-    display: none;
-}
-
-/* Mostra apenas a ferramenta que tiver a classe ativo (que o JS vai colocar) */
-.conteudo-ferramenta.ativo {
-    display: block;
-    /* Ou display: flex; dependendo de como você montou por dentro */
-}
-
-/* Dá o destaque visual no botão que estiver clicado */
-.botao-aba.ativo {
-    background-color: var(--verde-destaque);
-    color: #000;
-    font-weight: bold;
 }
 
 /* --- TÍTULO DAS FERRAMENTAS --- */
@@ -397,7 +324,234 @@ section:nth-of-type(3) button:hover {
     z-index: 2;
 }
 
-/* --- RODAPÉ (FOOTER) --- */
+/* --- SEÇÃO DIAGNÓSTICO IA --- */
+.diagnostico-ia-secao {
+    padding: 80px 8%;
+    background-color: rgba(1, 10, 5, 0.3);
+    border-top: 1px solid var(--borda-vidro);
+}
+
+.diagnostico-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.diagnostico-intro {
+    text-align: left;
+}
+
+.diagnostico-intro h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--verde-destaque);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.diagnostico-intro h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--branco);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.diagnostico-intro p {
+    color: #b3c7bc;
+    font-size: 1.05rem;
+}
+
+/* Caixa do Quiz (Efeito Vidro Premium) */
+.quiz-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 15px;
+    padding: 40px;
+    min-height: 420px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Controle de Exibição dos Passos */
+.pergunta-bloco {
+    animation: fadeInSuave 0.5s ease forwards;
+}
+
+.numero-passo {
+    color: var(--verde-destaque);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.quiz-box h3 {
+    font-size: 1.2rem;
+    color: var(--branco);
+    margin-bottom: 25px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.opcoes-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-opcao {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--branco);
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-opcao:hover {
+    background: rgba(167, 255, 213, 0.1);
+    border-color: var(--verde-destaque);
+    transform: translateX(5px);
+}
+
+/* Estado de Carregamento da IA */
+.carregador-ia {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.carregador-ia i {
+    font-size: 3rem;
+    color: var(--verde-destaque);
+    margin-bottom: 20px;
+}
+
+/* Tela de Resultado */
+.resultado-ia-conteudo {
+    text-align: center;
+}
+
+.icone-resultado {
+    font-size: 2.5rem;
+    color: var(--verde-destaque);
+    margin-bottom: 15px;
+}
+
+.texto-resposta-ia {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--verde-destaque);
+    margin: 20px 0;
+    font-size: 0.95rem;
+    color: #e0eade;
+    line-height: 1.6;
+}
+
+.btn-reiniciar {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.btn-reiniciar:hover {
+    color: var(--branco);
+    border-color: var(--branco);
+}
+
+/* --- SEÇÃO DE FEEDBACK --- */
+.secao-feedback {
+    padding: 80px 5%;
+    background: linear-gradient(180deg, #061c14 0%, var(--verde-fundo-profundo) 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.titulo-feedback {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-feedback h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--branco);
+    letter-spacing: 1px;
+}
+
+.titulo-feedback p {
+    color: var(--verde-destaque);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.container-feedback {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-feedback {
+    background-color: var(--verde-card);
+    padding: 35px 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card-feedback:hover {
+    transform: translateY(-5px);
+    border-color: var(--verde-destaque);
+}
+
+.estrelas {
+    color: #ffcc00;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.texto-feedback {
+    color: var(--branco);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.autor-feedback h4 {
+    color: var(--verde-destaque);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.autor-feedback span {
+    color: var(--verde-suave);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- RODAPÉ --- */
 footer {
     background-color: #03120d;
     padding: 50px 5% 20px 5%;
@@ -476,95 +630,15 @@ footer>div:nth-of-type(1) {
     z-index: 2;
 }
 
-/* --- SEÇÃO DE FEEDBACK --- */
-.secao-feedback {
-    padding: 80px 5%;
-    background: linear-gradient(180deg, #061c14 0%, var(--verde-fundo-profundo) 100%);
-    position: relative;
-    z-index: 2;
-}
-
-.titulo-feedback {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.titulo-feedback h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    color: var(--branco);
-    letter-spacing: 1px;
-}
-
-.titulo-feedback p {
-    color: var(--verde-destaque);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.container-feedback {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 colunas lado a lado no computador */
-    gap: 30px;
-}
-
-.card-feedback {
-    background-color: var(--verde-card);
-    padding: 35px 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 255, 136, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-.card-feedback:hover {
-    transform: translateY(-5px);
-    border-color: var(--verde-destaque);
-}
-
-.estrelas {
-    color: #ffcc00;
-    /* Amarelo ouro para as estrelinhas de avaliação */
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.texto-feedback {
-    color: var(--branco);
-    font-style: italic;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.autor-feedback h4 {
-    color: var(--verde-destaque);
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-.autor-feedback span {
-    color: var(--verde-suave);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 /* ========================================================== */
-/* CORREÇÃO DO SOBRE: CENTRALIZADO E ESPALHADO NO COMPUTADOR  */
+/* SEÇÃO SOBRE PÁGINA */
 /* ========================================================== */
-
 .secao-sobre-pagina {
     padding: 10px 0 60px 0 !important;
-    /* Tiramos o recuo fixo para o container mandar no espaço */
     min-height: 100vh;
     background-color: var(--verde-fundo-profundo);
     display: flex !important;
     justify-content: center !important;
-    /* Força o bloco inteiro a ir pro meio da tela */
     align-items: center;
     width: 100% !important;
     box-sizing: border-box;
@@ -573,42 +647,32 @@ footer>div:nth-of-type(1) {
 .container-sobre-pagina {
     display: flex !important;
     flex-direction: column !important;
-    /* Coloca o Vídeo em cima e os Textos embaixo */
     align-items: center !important;
-    /* Centraliza os blocos no meio da tela */
     max-width: 1200px;
-    /* Define o tamanho máximo que ele vai se espalhar */
     width: 90% !important;
-    /* Faz ele ocupar quase a tela toda no computador */
     margin: 0 auto !important;
-    /* Centralização universal de margem */
     gap: 40px;
     height: auto !important;
 }
 
-/* --- BLOCO DO VÍDEO CENTRALIZADO --- */
 .video-sobre {
     width: 100%;
     max-width: 800px;
-    /* Aumentamos o vídeo para ele ficar imponente no centro */
     margin: 0 auto !important;
 }
 
 .video-sobre iframe {
     width: 100%;
     height: 350px;
-    /* Altura ideal para um vídeo grande no computador */
     border-radius: 12px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     border: 2px solid rgba(0, 255, 136, 0.2);
     display: block;
 }
 
-/* --- BLOCO DE TEXTOS --- */
 .texto-sobre {
     width: 100% !important;
     text-align: center !important;
-    /* Centraliza o título "Luís Holanda" */
 }
 
 .texto-sobre h2 {
@@ -616,33 +680,27 @@ footer>div:nth-of-type(1) {
     font-size: 3.8rem;
     color: var(--branco);
     margin-top: -20px;
-
     letter-spacing: 1px;
 }
 
-/* MÁGICA: Abre os parágrafos ocupando o espaço esquerdo e direito */
 .blocos-texto-sobre {
     display: flex !important;
     flex-direction: row !important;
-    /* Garante que fiquem lado a lado no PC */
     justify-content: space-between !important;
     gap: 60px;
-    /* Espaço elegante separando a coluna da esquerda da direita */
     width: 100% !important;
     text-align: left;
-    /* O texto dentro delas se lê normalmente da esquerda */
 }
 
 .blocos-texto-sobre p {
     flex: 1 !important;
-    /* Faz as duas colunas dividirem a tela meio a meio */
     color: var(--verde-suave);
     font-size: 1.15rem;
     line-height: 1.8;
     margin: 0;
 }
 
-/* --- WHATSAPP FLUTUANTE (Mantém o mesmo) --- */
+/* --- WHATSAPP FLUTUANTE --- */
 .whatsapp-flutuante {
     position: fixed;
     bottom: 30px;
@@ -667,15 +725,13 @@ footer>div:nth-of-type(1) {
     transform: scale(1.1);
 }
 
-/* --- css do arquivo de apresentacao --- */
+/* --- SEÇÃO APRESENTAÇÃO PÁGINA --- */
 .secao-apresentacao-pagina {
     padding: 10px 0 60px 0 !important;
-    /* Tiramos o recuo fixo para o container mandar no espaço */
     min-height: 100vh;
     background-color: var(--verde-fundo-profundo);
     display: inline-block !important;
     justify-content: center !important;
-    /* Força o bloco inteiro a ir pro meio da tela */
     align-items: center !important;
     width: 100% !important;
     box-sizing: border-box;
@@ -685,47 +741,30 @@ footer>div:nth-of-type(1) {
     display: flex !important;
     justify-content: center !important;
     flex-direction: column !important;
-    /* Coloca o Vídeo em cima e os Textos embaixo */
     align-items: center !important;
-    /* Centraliza os blocos no meio da tela */
     max-width: 1200px;
-    /* Define o tamanho máximo que ele vai se espalhar */
     width: 90% !important;
-    /* Faz ele ocupar quase a tela toda no computador */
     margin: 0 auto !important;
-    /* Centralização universal de margem */
     gap: 40px;
     height: auto !important;
 }
 
-/* Container que segura os botões (coloca um abaixo do outro) */
 .container-botoes-pilares {
     display: flex;
     flex-direction: column;
-    /* Alinha em coluna (um embaixo do outro) */
     align-items: center;
-    /* Centraliza os botões na tela */
     gap: 15px;
-    /* Espaçamento de 15px entre um botão e outro */
     margin-top: 25px;
-    /* Distância do vídeo para os botões */
 }
 
-/* O visual dos seus novos botões */
 .botao-pilar {
     display: inline-block;
     width: 200px;
-    /* Largura do botão (ajuste se preferir menor/maior) */
     padding: 12px 20px;
-    /* Tamanho interno */
     background-color: var(--verde-card);
-    /* Cor de fundo padrão (troque pela cor do seu Começar Agora) */
     color: #ffffff !important;
-    /* Letra branca obrigatória */
     text-decoration: none;
-    /* Tira o sublinhado de link */
     border-radius: 5px;
-    /* Cantos arredondados */
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     text-align: center;
@@ -733,65 +772,52 @@ footer>div:nth-of-type(1) {
     box-sizing: border-box;
 }
 
-/* ANTI-ROXO: Impede que a cor mude após o clique */
 .botao-pilar:visited {
     color: #ffffff !important;
 }
 
-/* Efeito ao passar o mouse */
 .botao-pilar:hover {
     background-color: var(--verde-destaque);
-    /* Um tom mais escuro no hover (ajuste conforme sua cor) */
-    color: #ffffff !important;
+    color: #051c14 !important;
 }
 
-/* --- BLOCO DO VÍDEO CENTRALIZADO --- */
 .video-apresentacao {
     width: 100%;
     max-width: 800px;
-    /* Aumentamos o vídeo para ele ficar imponente no centro */
     margin: 0 auto !important;
 }
 
 .video-apresentacao iframe {
     width: 100%;
     height: 350px;
-    /* Altura ideal para um vídeo grande no computador */
     border-radius: 12px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     border: 2px solid rgba(0, 255, 136, 0.2);
     display: block;
 }
 
-/* --- RODAPÉ MINIMALISTA COM FRASE --- */
+/* --- RODAPÉ MINIMALISTA --- */
 .rodape-minimalista {
     background-color: #030e0a;
-    /* Um tom ainda mais profundo e escuro que o fundo */
     padding: 60px 5% 40px 5%;
-    /* Mais espaçado verticalmente para a frase respirar */
     width: 100%;
     box-sizing: border-box;
     border-top: 1px solid rgba(0, 255, 136, 0.05);
-    /* Linha neon quase invisível, bem elegante */
     position: relative;
     z-index: 2;
 }
 
 .conteudo-rodape-minimalista {
     max-width: 800px;
-    /* Limita a largura para a frase quebrar bonita no centro */
     margin: 0 auto;
     text-align: center;
-    /* Centraliza absolutamente tudo */
 }
 
-/* Estilização da Frase de Efeito */
 .frase-impacto {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
     font-style: italic;
-    /* Deixa em itálico para destacar que é uma citação */
     color: #25D366;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -799,233 +825,41 @@ footer>div:nth-of-type(1) {
     opacity: 0.9;
 }
 
-
-
-.frase-impacto {
-    font-size: 1.15rem;
-    /* Diminui o texto no celular para não espremer */
-    margin-bottom: 30px;
-}
-
-.texto-sobre h2 {
-    font-size: 40px;
-}
-
-.blocos-texto-sobre {
-    flex-direction: column;
-    /* No celular, as colunas de texto voltam a ficar uma embaixo da outra */
-    gap: 20px;
-
-
-}
-
-
-.whatsapp-flutuante {
-    width: 50px;
-    /* Um pouco menor no celular para não atrapalhar o toque */
-    height: 50px;
-    bottom: 20px;
-    right: 20px;
-    font-size: 24px;
-}
-
-/* --- ANIMAÇÃO DE FLUTUAÇÃO AO ROLAR A PÁGINA --- */
-
-/* 1. Estado inicial: Como os elementos começam (invisíveis e 50px mais para baixo) */
+/* --- ANIMAÇÃO DE FLUTUAÇÃO --- */
 .efeito-flutuar {
     opacity: 0;
     transform: translateY(50px);
-    /* Empurra um pouco para baixo */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    /* Velocidade do efeito */
     will-change: opacity, transform;
 }
 
-/* 2. Estado ativo: Quando o JavaScript detectar a rolagem, ele adiciona essa classe */
 .efeito-flutuar.visivel {
     opacity: 1;
     transform: translateY(0);
-    /* Volta para a posição original, dando o efeito de subida */
-}
-/* --- SEÇÃO DIAGNÓSTICO IA --- */
-.diagnostico-ia-secao {
-    padding: 80px 8%;
-    background-color: rgba(1, 10, 5, 0.3);
-    border-top: 1px solid var(--borda-vidro);
 }
 
-.diagnostico-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.diagnostico-intro {
-    text-align: left;
-}
-
-.diagnostico-intro h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    color: var(--verde-destaque);
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.diagnostico-intro h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--branco);
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.diagnostico-intro p {
-    color: #b3c7bc;
-    font-size: 1.05rem;
-}
-
-/* Caixa do Quiz (Efeito Vidro Premium) */
-.quiz-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--borda-vidro);
-    border-radius: 15px;
-    padding: 40px;
-    min-height: 320px;
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-/* Controle de Exibição dos Passos */
-.pergunta-passo {
-    display: none;
-}
-
-.pergunta-passo.ativa {
-    display: block;
-    animation: fadeInSuave 0.5s ease forwards;
-}
-
-.numero-passo {
-    color: var(--verde-destaque);
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.quiz-box h3 {
-    font-size: 1.25rem;
-    color: var(--branco);
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-.opcoes-grupo {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.btn-opcao {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--branco);
-    padding: 15px 20px;
-    border-radius: 8px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-opcao:hover {
-    background: rgba(167, 255, 213, 0.1);
-    border-color: var(--verde-destaque);
-    transform: translateX(5px);
-}
-
-/* Estado de Carregamento da IA */
-.carregador-ia {
-    text-align: center;
-    padding: 40px 0;
-}
-
-.carregador-ia i {
-    font-size: 3rem;
-    color: var(--verde-destaque);
-    margin-bottom: 20px;
-}
-
-/* Tela de Resultado */
-.resultado-ia-conteudo {
-    text-align: center;
-}
-
-.icone-resultado {
-    font-size: 2.5rem;
-    color: var(--verde-destaque);
-    margin-bottom: 15px;
-}
-
-.texto-resposta-ia {
-    text-align: left;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 4px solid var(--verde-destaque);
-    margin: 20px 0;
-    font-size: 0.95rem;
-    color: #e0eade;
-    line-height: 1.6;
-}
-
-.btn-reiniciar {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.6);
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    transition: all 0.3s;
-}
-
-.btn-reiniciar:hover {
-    color: var(--branco);
-    border-color: var(--branco);
-}
-
-/* Animação de entrada dos passos */
 @keyframes fadeInSuave {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Responsivo Celular */
-@media (max-width: 768px) {
-    .diagnostico-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .diagnostico-intro { text-align: center; }
-    .quiz-box { padding: 25px; }
-}
+/* ========================================================== */
+/* RESPONSIVIDADE ADAPTATIVA (CELULAR & TABLETS) */
+/* ========================================================== */
 @media (max-width: 968px) {
 
-    /* 1. TRAVA DE SEGURANÇA CONTRA ROLAGEM LATERAL */
     html,
     body {
         width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
-        /* Corta qualquer vazamento */
     }
 
     body,
@@ -1040,7 +874,6 @@ footer>div:nth-of-type(1) {
         overflow-x: hidden !important;
     }
 
-    /* 2. PADRONIZAÇÃO DE TODAS AS SEÇÕES */
     section {
         width: 100% !important;
         max-width: 100% !important;
@@ -1051,7 +884,6 @@ footer>div:nth-of-type(1) {
         box-sizing: border-box !important;
     }
 
-    /* 3. A SEÇÃO 1 (HERO) - AJUSTADA E CENTRALIZADA */
     section:nth-of-type(1) {
         height: auto !important;
         max-height: none !important;
@@ -1059,52 +891,37 @@ footer>div:nth-of-type(1) {
         overflow: visible !important;
         position: relative;
         z-index: 10;
-        /* Mudamos para Flexbox no celular para garantir que tudo fique em uma coluna perfeita e centralizada */
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
         padding: 100px 20px 40px 20px !important;
-
     }
 
-    /* CORREÇÃO DO H1: Centralizado e sem margens antigas puxando ele */
     section:nth-of-type(1) h1 {
         font-size: 2.4rem !important;
-        /* Um pouquinho menor para caber em telas pequenas */
         width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
         text-align: center !important;
     }
 
-    /* CORREÇÃO DO PARÁGRAFO: Centralizado e esticado na largura certa */
     .descricao-hero {
         font-size: 1.1rem !important;
-        color: var(--verde-suave);
         margin: 20px auto !important;
-        /* Centraliza horizontalmente com auto */
         width: 100% !important;
         max-width: 500px;
-        /* Limita para não virar um textão esticado */
         text-align: center !important;
-        z-index: 2;
-        position: relative;
     }
 
-    /* CORREÇÃO DA IMAGEM: O ponto crucial do erro! */
     section:nth-of-type(1) img {
         width: 100% !important;
-        /* Faz ela se adaptar ao tamanho de qualquer celular */
         max-width: 320px !important;
-        /* Impede que ela passe do limite seguro de telas pequenas */
         height: auto !important;
         margin: 0 auto 20px auto !important;
-        /* Zera as laterais e centraliza no meio */
         display: block !important;
     }
 
-    /* 4. CENTRALIZAÇÃO DOS BOTÕES */
     section:nth-of-type(1) #btn-comecar-agora,
     section:nth-of-type(1) a.botao-apresentacao {
         margin-bottom: 15px !important;
@@ -1115,7 +932,6 @@ footer>div:nth-of-type(1) {
         max-width: 300px !important;
     }
 
-    /* 5. ICONES EM LINHA/COLUNA */
     .container-icones-linha {
         display: flex !important;
         flex-direction: column !important;
@@ -1135,12 +951,10 @@ footer>div:nth-of-type(1) {
         width: 100% !important;
     }
 
-    /* 6. OUTRAS SEÇÕES (Mantive suas lógicas de Grid ajustadas) */
     section:nth-of-type(2) {
         position: relative;
         z-index: 1;
         grid-template-columns: 1fr !important;
-        /* Mudado para 1fr para os cards ficarem um embaixo do outro no celular */
         gap: 20px;
     }
 
@@ -1153,7 +967,42 @@ footer>div:nth-of-type(1) {
         gap: 20px;
     }
 
+    .diagnostico-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .diagnostico-intro {
+        text-align: center;
+    }
+
+    .quiz-box {
+        padding: 25px;
+    }
+
     footer>div:nth-of-type(1) {
         flex-direction: column !important;
+    }
+
+    .frase-impacto {
+        font-size: 1.15rem;
+        margin-bottom: 30px;
+    }
+
+    .texto-sobre h2 {
+        font-size: 40px;
+    }
+
+    .blocos-texto-sobre {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .whatsapp-flutuante {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
     }
 }

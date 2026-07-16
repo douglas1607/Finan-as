@@ -1,8 +1,8 @@
-/* --- VARIÁVEIS DE CORES E IDENTIDADE --- */
+/* --- VARIÁVEIS DE CORES E IDENTIDADE #146b3e--- */
 :root {
     --verde-escuro-profundo: #010a05;
     --verde-principal: #0b4d2a;
-    --verde-suave: #146b3e;
+    --verde-suave: #a7ffd5;
     --verde-card: #0b2d21;
     --dourado-brilhante: #f3b61f;
     --dourado-suave: #d4a373;
@@ -33,7 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%;
-    background-color: rgba(1, 10, 5, 0.85);
+   background-color: rgba(5, 28, 20, 0.4);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--borda-vidro);
     position: sticky;
@@ -216,8 +216,13 @@ body {
 
 .container-fundamentos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Melhora o encaixe independente se forem 3 ou 4 cards */
-    gap: 30px;
+    /* Reduzimos o tamanho mínimo de 250px para 200px para que os 4 caibam lado a lado */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; /* Espaço entre os cards */
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima do bloco na tela */
+    margin: 0 auto; /* Centraliza o bloco na página */
+    padding: 20px;
 }
 
 .card-fundamento {
@@ -357,9 +362,9 @@ body {
     color: var(--texto-mutado);
 }
 
-/* --- RODAPÉ --- */
+/* --- RODAPÉ #010603--- */
 .rodape {
-    background-color: #010603;
+    background-color: #030e0a;
     padding: 60px 8% 20px 8%;
     border-top: 1px solid var(--borda-vidro);
 }
@@ -435,6 +440,62 @@ body {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 30px rgba(243, 182, 31, 0.1);
     border-color: var(--dourado-brilhante);
+}
+/* --- ESTILIZAÇÃO DO ACCORDION (DETAILS / SUMMARY) --- */
+
+/* Remove a setinha padrão chata que o navegador coloca automaticamente */
+.caixa-destaque[open] summary::-webkit-details-marker,
+.caixa-destaque summary::-webkit-details-marker {
+    display: none;
+}
+.caixa-destaque summary {
+    list-style: none; /* Esconde em navegadores modernos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Espaçamento do parágrafo revelado */
+.caixa-destaque p {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--texto-claro);
+    
+    /* Pequeno efeito de fade-in ao abrir */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Estilização da setinha auxiliar */
+.seta-toggle {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+/* Gira a setinha quando o card estiver aberto */
+.caixa-destaque[open] .seta-toggle {
+    transform: rotate(180deg);
+    color: var(--dourado-brilhante);
+}
+
+/* Efeito sutil ao passar o mouse sobre o botão de abrir */
+.caixa-destaque summary:hover {
+    filter: brightness(1.2);
+}
+
+/* Animação suave para revelar o texto */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- RESPONSIVIDADE (CELULAR E TABLET) --- */

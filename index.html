@@ -10,12 +10,13 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="icon" href="data:,">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:,">
 
-    <title>Educação Financeira</title>
+    <title>Educação Financeira - Luís Holanda</title>
 </head>
 
 <body>
@@ -34,18 +35,17 @@
     </nav>
     <section>
         <img src="./img/foto-educador-financeiro.PNG" alt="foto-educador-financeiro">
-        <h1>Transforme sua vida finannceira hoje!</h1>
-        <p class="descricao-hero">Aprenda a administrar, investir e fazer seu dinhheiro trabalhar para você. Conteúdo
-            prático e acessiível para
-            todos níveis.</p>
+        <h1>Transforme sua vida financeira hoje!</h1>
+        <p class="descricao-hero">Aprenda a administrar, investir e fazer seu dinheiro trabalhar para você. Conteúdo
+            prático e acessível para todos os níveis.</p>
         <button id="btn-comecar-agora">Começar agora</button>
         <a href="apresentacao.html" class="botao-apresentacao">Ver como funciona</a>
         <div class="container-icones-linha">
             <p class="texto-com-icone"><i class="fa-solid fa-book-open"></i> Conteúdo Prático</p>
             <p class="texto-com-icone"><i class="fa-solid fa-screwdriver-wrench"></i> Ferramentas Exclusivas</p>
         </div>
-
     </section>
+
     <section class="efeito-flutuar">
         <div class="efeito-flutuar">
             <h2>Aprenda</h2>
@@ -53,7 +53,7 @@
         </div>
         <div class="efeito-flutuar">
             <h2>Planeje</h2>
-            <p>Ferramentas para ajudar você a planejarseus gastos, criar metas e organizar sua vida financeira.</p>
+            <p>Ferramentas para ajudar você a planejar seus gastos, criar metas e organizar sua vida financeira.</p>
         </div>
         <div class="efeito-flutuar">
             <h2>Invista</h2>
@@ -64,10 +64,12 @@
             <p>Alcance seus objetivos financeiros e conquiste a liberdade que você merece.</p>
         </div>
     </section>
+
     <div>
         <h2>Ferramentas e destaques</h2>
         <p>Recursos para te ajudar no dia a dia</p>
     </div>
+
     <section>
         <div class="card-ferramenta efeito-flutuar">
             <h2>Calculadora de Juros</h2>
@@ -86,7 +88,6 @@
         <div class="card-ferramenta efeito-flutuar">
             <h2>Simulador de Metas</h2>
             <p>Simule suas metas e veja quanto tempo leva para alcançá-las.</p>
-
             <div class="inputs-ferramenta" id="form-metas" style="display: none; margin-bottom: 15px;">
                 <input type="number" id="meta-valor" placeholder="Valor total do objetivo (R$)"
                     style="width: 100%; padding: 8px; margin-bottom: 8px; border-radius: 4px; border: none;">
@@ -109,89 +110,163 @@
             <button id="btn-gastos">Usar ferramenta ➔</button>
         </div>
         <div class="card-ferramenta efeito-flutuar">
-            <h2>desafio 52 Semanas</h2>
-            <p>Guarde dimheiro durante 52 semanas e veja sua reserva crescer.</p>
+            <h2>Desafio 52 Semanas</h2>
+            <p>Guarde dinheiro durante 52 semanas e veja sua reserva crescer.</p>
             <div class="inputs-ferramenta" id="form-desafio" style="display: none; margin-bottom: 15px;">
                 <input type="number" id="desafio-base" placeholder="Valor base para iniciar (Ex: 1, 2 ou 5)"
                     style="width: 100%; padding: 8px; margin-bottom: 8px; border-radius: 4px; border: none;">
             </div>
-            <p id="resultado-desafio" style="color: #00ff88; font-weight: bold; margin-bottom: 10px; display: none;">
-            </p>
+            <p id="resultado-desafio" style="color: #00ff88; font-weight: bold; margin-bottom: 10px; display: none;"></p>
             <button id="btn-desafio">Usar ferramenta ➔</button>
         </div>
-
     </section>
-    <!-- ==========================================
-     SEÇÃO: DIAGNÓSTICO FINANCEIRO COM IA
-     ========================================== -->
-<section class="diagnostico-ia-secao">
-    <div class="diagnostico-container">
-        <div class="diagnostico-intro">
-            <h2><i class="fa-solid fa-brain"></i> DIAGNÓSTICO COM IA</h2>
-            <h1>Descubra o que está travando sua prosperidade</h1>
-            <p>Responda 3 perguntas rápidas e nossa Inteligência Artificial vai analisar seu nível atual de estagnação e indicar o melhor caminho.</p>
-        </div>
 
-        <!-- Caixa do Quiz Interativo -->
-        <div class="quiz-box" id="quiz-box">
-            
-            <!-- Pergunta 1 -->
-            <div class="pergunta-passo ativa" id="passo-1">
-                <span class="numero-passo">Passo 1 de 3</span>
-                <h3>Como está sua capacidade de guardar dinheiro hoje?</h3>
-                <div class="opcoes-grupo">
-                    <button class="btn-opcao" onclick="proximoPasso(1, 'A')">Consigo guardar e investir todo mês.</button>
-                    <button class="btn-opcao" onclick="proximoPasso(1, 'B')">Guardo um pouco, mas fica parado na poupança.</button>
-                    <button class="btn-opcao" onclick="proximoPasso(1, 'C')">Não sobra nada, vivo exatamente com o que ganho.</button>
-                </div>
+    <section class="diagnostico-ia-secao">
+        <div class="diagnostico-container">
+            <div class="diagnostico-intro">
+                <h2><i class="fa-solid fa-brain"></i> DIAGNÓSTICO COM IA</h2>
+                <h1>Descubra o que está travando sua prosperidade</h1>
+                <p>Responda 10 perguntas rápidas e mapeie a real distribuição do seu dinheiro hoje.</p>
             </div>
 
-            <!-- Pergunta 2 -->
-            <div class="pergunta-passo" id="passo-2">
-                <span class="numero-passo">Passo 2 de 3</span>
-                <h3>Se você tivesse uma emergência séria hoje, o que faria?</h3>
-                <div class="opcoes-grupo">
-                    <button class="btn-opcao" onclick="proximoPasso(2, 'A')">Estou tranquilo, tenho uma reserva guardada só para isso.</button>
-                    <button class="btn-opcao" onclick="proximoPasso(2, 'B')">Teria que apertar muito o cinto ou pedir ajuda a parentes.</button>
-                    <button class="btn-opcao" onclick="proximoPasso(2, 'C')">Precisaria recorrer a empréstimos, cartão ou entrar no cheque especial.</button>
+            <div class="quiz-box" id="quiz-box">
+                <div class="quiz-progresso" style="margin-bottom: 20px; color: var(--verde-destaque); font-weight: 600; font-size: 0.9rem;">
+                    Pergunta <span id="pergunta-atual-numero">1</span> de 10
                 </div>
-            </div>
 
-            <!-- Pergunta 3 -->
-            <div class="pergunta-passo" id="passo-3">
-                <span class="numero-passo">Passo 3 de 3</span>
-                <h3>Qual o seu maior objetivo com o seu dinheiro atualmente?</h3>
-                <div class="opcoes-grupo">
-                    <button class="btn-opcao" onclick="finalizarQuiz('A')">Multiplicar o que já tenho e viver de renda.</button>
-                    <button class="btn-opcao" onclick="finalizarQuiz('B')">Aprender a me organizar, sair das dívidas e ter paz.</button>
-                    <button class="btn-opcao" onclick="finalizarQuiz('C')">Apenas conseguir pagar as contas do mês sem passar sufoco.</button>
-                </div>
-            </div>
-
-            <!-- Tela de Carregamento (Simulação da IA processando) -->
-            <div class="pergunta-passo" id="passo-carregando">
-                <div class="carregador-ia">
-                    <i class="fa-solid fa-spinner fa-spin"></i>
-                    <h3>Analisando suas respostas...</h3>
-                    <p>Conectando com a IA do Luís Holanda Educador Financeiro.</p>
-                </div>
-            </div>
-
-            <!-- Tela de Resultado Final -->
-            <div class="pergunta-passo" id="passo-resultado">
-                <div class="resultado-ia-conteudo">
-                    <i class="fa-solid fa-chart-pie icone-resultado"></i>
-                    <h2>Seu Diagnóstico Personalizado</h2>
-                    <div class="texto-resposta-ia" id="resposta-ia-texto">
-                        <!-- O texto dinâmico gerado pelo JavaScript vai aparecer aqui -->
+                <div class="pergunta-bloco active" data-step="1" data-categoria="gastos">
+                    <span class="numero-passo">Etapa 1: Consumo</span>
+                    <h3>1. Como você monitora e acompanha suas despesas diárias?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Não acompanho. Só descubro o saldo quando olho o extrato ou o cartão é recusado.</button>
+                        <button class="btn-opcao" data-points="2">Tenho apenas uma noção mental de cabeça dos meus limites.</button>
+                        <button class="btn-opcao" data-points="3">Registro tudo de forma organizada em planilha ou aplicativo.</button>
                     </div>
-                    <button class="btn-reiniciar" onclick="reiniciarQuiz()">Refazer Diagnóstico</button>
+                </div>
+
+                <div class="pergunta-bloco" data-step="2" data-categoria="gastos" style="display: none;">
+                    <span class="numero-passo">Etapa 1: Consumo</span>
+                    <h3>2. Com que frequência você realiza compras por impulso (roupas, delivery, etc.)?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Frequentemente. Se gostei e tenho limite, acabo comprando.</button>
+                        <button class="btn-opcao" data-points="2">Às vezes, principalmente quando estou ansioso ou vejo promoções.</button>
+                        <button class="btn-opcao" data-points="3">Raramente. Planejo minhas compras com antecedência.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="3" data-categoria="gastos" style="display: none;">
+                    <span class="numero-passo">Etapa 1: Consumo</span>
+                    <h3>3. Como está o seu atual padrão de vida em relação aos seus ganhos mensais?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Meu custo de vida é maior do que eu ganho atualmente.</button>
+                        <button class="btn-opcao" data-points="2">Vivo no limite. Empato o jogo todo mês e não sobra nada.</button>
+                        <button class="btn-opcao" data-points="3">Vivo um padrão confortável que fica abaixo do que ganho.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="4" data-categoria="gastos" style="display: none;">
+                    <span class="numero-passo">Etapa 1: Consumo</span>
+                    <h3>4. Você costuma revisar suas assinaturas, tarifas bancárias e pequenos gastos?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Nunca revisei. Pago tudo no débito automático sem perceber.</button>
+                        <button class="btn-opcao" data-points="2">Sei que pago algumas coisas desnecessárias, mas tenho preguiça de cancelar.</button>
+                        <button class="btn-opcao" data-points="3">Sim, anualmente reviso e cancelo tudo que não gera valor.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="5" data-categoria="reserva" style="display: none;">
+                    <span class="numero-passo">Etapa 2: Segurança</span>
+                    <h3>5. Se você perdesse sua principal renda hoje, por quanto tempo manteria seu padrão?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Menos de um mês. Teria problemas graves imediatamente.</button>
+                        <button class="btn-opcao" data-points="2">Entre 1 a 3 meses, apertando bastante o cinto.</button>
+                        <button class="btn-opcao" data-points="3">6 meses ou mais. Tenho uma reserva bem estruturada.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="6" data-categoria="reserva" style="display: none;">
+                    <span class="numero-passo">Etapa 2: Segurança</span>
+                    <h3>6. Diante de um imprevisto caro, o que você costuma fazer?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Entro no cheque especial ou parcelo com juros altos.</button>
+                        <button class="btn-opcao" data-points="2">Uso o cartão ou pego dinheiro guardado para outros planos.</button>
+                        <button class="btn-opcao" data-points="3">Uso minha reserva de emergência guardada para isso.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="7" data-categoria="reserva" style="display: none;">
+                    <span class="numero-passo">Etapa 2: Segurança</span>
+                    <h3>7. Qual é a sua atual relação com dívidas ou faturas atrasadas?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Estou endividado ou com faturas em atraso acumulando juros.</button>
+                        <button class="btn-opcao" data-points="2">Tenho muitas parcelas acumuladas que comprometem o orçamento.</button>
+                        <button class="btn-opcao" data-points="3">Não tenho dívidas de consumo e compro à vista ou planejado.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="8" data-categoria="investimento" style="display: none;">
+                    <span class="numero-passo">Etapa 3: Multiplicação</span>
+                    <h3>8. Qual percentual da sua renda você consegue poupar todo mês?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">0%. Não sobra absolutamente nada para guardar.</button>
+                        <button class="btn-opcao" data-points="2">Menos de 10%, e de forma muito irregular.</button>
+                        <button class="btn-opcao" data-points="3">10% ou mais, guardados logo no início do mês.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="9" data-categoria="investimento" style="display: none;">
+                    <span class="numero-passo">Etapa 3: Multiplicação</span>
+                    <h3>9. Onde se encontra o dinheiro que você consegue guardar?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Fica parado na conta corrente ou em mãos.</button>
+                        <button class="btn-opcao" data-points="2">Está todo aplicado na Poupança tradicional do banco.</button>
+                        <button class="btn-opcao" data-points="3">Está diversificado em investimentos reais (renda fixa, ações, etc.).</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-bloco" data-step="10" data-categoria="investimento" style="display: none;">
+                    <span class="numero-passo">Etapa 3: Multiplicação</span>
+                    <h3>10. Como está estruturado o seu plano para a aposentadoria/independência?</h3>
+                    <div class="opcoes-grupo">
+                        <button class="btn-opcao" data-points="1">Não tenho plano algum ou dependo exclusivamente do INSS.</button>
+                        <button class="btn-opcao" data-points="2">Sei que preciso fazer algo, mas ainda não comecei na prática.</button>
+                        <button class="btn-opcao" data-points="3">Já invisto focado na minha independência financeira.</button>
+                    </div>
+                </div>
+
+                <div class="pergunta-passo" id="passo-carregando" style="display: none;">
+                    <div class="carregador-ia">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        <h3>Analisando suas respostas...</h3>
+                        <p>Processando seu perfil de saúde financeira.</p>
+                    </div>
+                </div>
+
+                <div class="pergunta-passo" id="passo-resultado" style="display: none;">
+                    <div class="resultado-ia-conteudo">
+                        <i class="fa-solid fa-chart-pie icone-resultado"></i>
+                        <h2 id="texto-resultado">Seu Diagnóstico Personalizado</h2>
+                        
+                        <div class="grafico-container" style="position: relative; height: 260px; width: 100%; margin: 20px 0;">
+                            <canvas id="graficoPizza"></canvas>
+                        </div>
+
+                        <div class="texto-resposta-ia">
+                            <strong>Conselho Estratégico:</strong>
+                            <p id="conselho-resultado" style="margin-top: 10px;"></p>
+                        </div>
+
+                        <a href="https://wa.me/5585992826206?text=Olá%20Luís,%20fiz%20o%20meu%20diagnóstico%20financeiro%20no%20seu%20site%20e%20quero%20mudar%20minha%20realidade!" target="_blank" class="botao-pilar" style="width:100%; max-width:320px; display:inline-block; margin: 15px auto 0 auto; background-color: var(--verde-destaque); color: #051c14 !important;">
+                            <i class="fa-brands fa-whatsapp"></i> Agendar Mentoria Gratuita
+                        </a>
+                        <br><br>
+                        <button class="btn-reiniciar" onclick="reiniciarQuiz()">Refazer Diagnóstico</button>
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
+
     <section id="feedback" class="secao-feedback efeito-flutuar ">
         <div class="titulo-feedback efeito-flutuar">
             <h2>O que dizem os alunos</h2>
@@ -221,7 +296,7 @@
 
             <div class="card-feedback efeito-flutuar">
                 <div class="estrelas">★★★★★</div>
-                <p class="texto-feedback">"A mentoria do Luís abriu meus olhos para os juros compostos. O site reflete
+                <p class="texto-feedback">"A mentoria do Luís abreu meus olhos para os juros compostos. O site reflete
                     exatamente o método prático que ele ensina. Recomendo para todo mundo!"</p>
                 <div class="autor-feedback">
                     <h4>Beatriz Ribeiro</h4>
@@ -230,41 +305,36 @@
             </div>
         </div>
     </section>
+
     <footer class="rodape" id="contato">
         <div>
-
-
-
             <div class="coluna-rodape links-uteis">
                 <h3>Navegação</h3>
                 <ul>
                     <li><a href="sobre.html">Sobre</a></li>
-
                     <li><a href="#feedback">Feedback</a></li>
-
                 </ul>
             </div>
 
             <div class="coluna-rodape contato-redes">
-                <h3>Contacto</h3>
+                <h3>Contato</h3>
                 <p>📩 luisholanda.educadorfinanceiro.com</p>
                 <p>💬 +55 (85)992826206 </p>
 
                 <div class="icones-redes">
                     <a href="https://www.instagram.com/luis.holanda3?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                         target="_blank" title="Instagram">📸 Instagram</a>
-                    <a href="#" target="_blank" title="TikTok">▶YouTube</a>
+                    <a href="#" target="_blank" title="TikTok">▶️ YouTube</a>
                 </div>
             </div>
-
         </div>
 
         <div class="direitos-autorais">
-            <p>&copy; 2026Luís Holanda Educação Financeira. Todos os direitos Reservados</p>
+            <p>&copy; 2026 Luís Holanda Educação Financeira. Todos os direitos Reservados</p>
         </div>
     </footer>
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
