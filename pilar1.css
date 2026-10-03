@@ -1,4 +1,6 @@
-/* --- VARIÁVEIS DE CORES E IDENTIDADE #146b3e-#010a05-- */
+/* ==========================================
+   1. VARIÁVEIS DE CORES E IDENTIDADE
+   ========================================== */
 :root {
     --verde-escuro-profundo: #051c14;
     --verde-principal: #0b4d2a;
@@ -12,7 +14,9 @@
     --texto-mutado: #b3c7bc;
 }
 
-/* --- RESET GLOBAL --- */
+/* ==========================================
+   2. RESET GLOBAL & BODY
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -27,13 +31,15 @@ body {
     overflow-x: hidden;
 }
 
-/* --- MENU DE NAVEGAÇÃO PREMIUM --- */
+/* ==========================================
+   3. MENU DE NAVEGAÇÃO (<nav class="menu">)
+   ========================================== */
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%;
-   background-color: rgba(5, 28, 20, 0.4);
+    background-color: rgba(5, 28, 20, 0.4);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--borda-vidro);
     position: sticky;
@@ -78,35 +84,28 @@ body {
     background-color: rgba(243, 182, 31, 0.05);
 }
 
-/* --- SEÇÃO INTRODUÇÃO (Ajustada para Colunas Lado a Lado) --- */
+.menu-links .icone-menu {
+    display: none;
+}
+
+/* ==========================================
+   4. INTRODUÇÃO (<section class="introducao">)
+   ========================================== */
 .introducao {
     padding: 80px 8% 60px 8%;
     display: flex;
-    flex-wrap: wrap; /* Permite que a frase de visão quebre para a linha de baixo */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
 }
 
+/* Bloco da Esquerda (Textos) */
 .bloco-texto-intro {
     flex: 1;
     min-width: 300px;
     max-width: 55%;
     text-align: left;
-}
-
-.bloco-logo-intro {
-    flex: 1;
-    min-width: 280px;
-    max-width: 50%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.logo-introducao {
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.5)); /* Sombra para destacar a logo do fundo */
 }
 
 .introducao h1 {
@@ -150,7 +149,32 @@ body {
     font-size: 1.2rem;
 }
 
-/* A Visão centralizada imponente abaixo das duas colunas */
+/* Bloco da Direita (Logo do Educador Financeiro) */
+.bloco-logo-intro {
+    flex: 1;
+    min-width: 280px;
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Aumento do tamanho da imagem da logo */
+.logo-introducao {
+    width: 100%;
+    max-width: 500px; /* Aumentado para destacar mais a imagem */
+    height: auto;
+    filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.logo-introducao:hover {
+    transform: scale(1.03); /* Efeito sutil ao passar o mouse */
+}
+
+/* ==========================================
+   5. FRASE VISÃO (<h2 class="frase-visao">)
+   ========================================== */
 .frase-visao {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.2rem !important;
@@ -163,7 +187,9 @@ body {
     padding-top: 20px;
 }
 
-/* --- SEÇÃO OBJETIVOS --- */
+/* ==========================================
+   6. SEÇÃO OBJETIVOS (<div class="objetivos">)
+   ========================================== */
 .objetivos {
     display: flex;
     background-color: rgba(11, 77, 42, 0.2);
@@ -200,7 +226,9 @@ body {
     font-weight: 600;
 }
 
-/* --- SEÇÃO 3 FUNDAMENTOS (CARDS PREMIUM) --- */
+/* ==========================================
+   7. SEÇÃO FUNDAMENTOS (<section class="fundamentos">)
+   ========================================== */
 .fundamentos {
     padding: 80px 8%;
 }
@@ -216,12 +244,11 @@ body {
 
 .container-fundamentos {
     display: grid;
-    /* Reduzimos o tamanho mínimo de 250px para 200px para que os 4 caibam lado a lado */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; /* Espaço entre os cards */
+    gap: 20px;
     width: 100%;
-    max-width: 1200px; /* Limita a largura máxima do bloco na tela */
-    margin: 0 auto; /* Centraliza o bloco na página */
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
@@ -278,7 +305,7 @@ body {
     margin-right: 5px;
 }
 
-/* Caixas internas estilizadas do card */
+/* Caixas internas dos cards */
 .caixa-destaque {
     padding: 15px;
     border-radius: 6px;
@@ -308,7 +335,49 @@ body {
 
 .pratica h3 { color: var(--dourado-brilhante); }
 
-/* --- SEÇÃO OS 4 INIMIGOS (GRID MODERNO) --- */
+/* ==========================================
+   8. ACCORDIONS DA SEÇÃO FUNDAMENTOS (DETAILS/SUMMARY)
+   ========================================== */
+.caixa-destaque[open] summary::-webkit-details-marker,
+.caixa-destaque summary::-webkit-details-marker {
+    display: none;
+}
+
+.caixa-destaque summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+
+.caixa-destaque summary:hover {
+    filter: brightness(1.2);
+}
+
+.caixa-destaque p {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--texto-claro);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.seta-toggle {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.caixa-destaque[open] .seta-toggle {
+    transform: rotate(180deg);
+    color: var(--dourado-brilhante);
+}
+
+/* ==========================================
+   9. SEÇÃO OS 4 INIMIGOS (<section class="inimigos">)
+   ========================================== */
 .inimigos {
     padding: 80px 8%;
     background-color: rgba(1, 10, 5, 0.4);
@@ -362,7 +431,9 @@ body {
     color: var(--texto-mutado);
 }
 
-/* --- RODAPÉ #010603--- */
+/* ==========================================
+   10. RODAPÉ (<footer class="rodape">)
+   ========================================== */
 .rodape {
     background-color: #030e0a;
     padding: 60px 8% 20px 8%;
@@ -382,8 +453,13 @@ body {
     margin-bottom: 15px;
 }
 
-.coluna-rodape ul { list-style: none; }
-.coluna-rodape ul li { margin-bottom: 8px; }
+.coluna-rodape ul { 
+    list-style: none; 
+}
+
+.coluna-rodape ul li { 
+    margin-bottom: 8px; 
+}
 
 .coluna-rodape a {
     color: var(--texto-mutado);
@@ -391,7 +467,9 @@ body {
     transition: color 0.3s;
 }
 
-.coluna-rodape a:hover { color: var(--dourado-brilhante); }
+.coluna-rodape a:hover { 
+    color: var(--dourado-brilhante); 
+}
 
 .coluna-rodape p {
     color: var(--texto-mutado);
@@ -399,7 +477,10 @@ body {
     font-size: 0.9rem;
 }
 
-.icones-redes { margin-top: 15px; }
+.icones-redes { 
+    margin-top: 15px; 
+}
+
 .icones-redes a {
     display: inline-block;
     margin-right: 15px;
@@ -417,7 +498,9 @@ body {
     color: var(--texto-mutado);
 }
 
-/* --- SCROLL REVEAL ANIMATION --- */
+/* ==========================================
+   11. ANIMAÇÕES & EFETIOS DE SCROLL
+   ========================================== */
 @keyframes revelarCard {
     from {
         opacity: 0;
@@ -426,6 +509,17 @@ body {
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -441,118 +535,57 @@ body {
     box-shadow: 0 15px 30px rgba(243, 182, 31, 0.1);
     border-color: var(--dourado-brilhante);
 }
-/* --- ESTILIZAÇÃO DO ACCORDION (DETAILS / SUMMARY) --- */
 
-/* Remove a setinha padrão chata que o navegador coloca automaticamente */
-.caixa-destaque[open] summary::-webkit-details-marker,
-.caixa-destaque summary::-webkit-details-marker {
-    display: none;
-}
-.caixa-destaque summary {
-    list-style: none; /* Esconde em navegadores modernos */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Espaçamento do parágrafo revelado */
-.caixa-destaque p {
-    margin-top: 10px;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: var(--texto-claro);
-    
-    /* Pequeno efeito de fade-in ao abrir */
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Estilização da setinha auxiliar */
-.seta-toggle {
-    font-size: 0.75rem;
-    transition: transform 0.3s ease;
-}
-
-/* Gira a setinha quando o card estiver aberto */
-.caixa-destaque[open] .seta-toggle {
-    transform: rotate(180deg);
-    color: var(--dourado-brilhante);
-}
-
-/* Efeito sutil ao passar o mouse sobre o botão de abrir */
-.caixa-destaque summary:hover {
-    filter: brightness(1.2);
-}
-
-/* Animação suave para revelar o texto */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.menu-links .icone-menu {
-    display: none;
-}
-
-/* Quando a tela for menor que 768px (Celular e Tablet) */
-@media (max-width: 768px) {
-    /* Esconde o texto longo do menu */
-    .menu-links .texto-menu {
-        display: none;
-    }
-
-    /* Mostra apenas os ícones (as setinhas e a casinha) */
-    .menu-links .icone-menu {
-        display: inline-block;
-        font-size: 1.2rem; /* Tamanho confortável para clicar com o polegar */
-    }
-
-    /* Ajusta o espaçamento dos botões no celular para não ficarem colados */
-    .menu-links a {
-        padding: 10px 15px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-/* --- RESPONSIVIDADE (CELULAR E TABLET) --- */
+/* ==========================================
+   12. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================== */
 @media (max-width: 1024px) {
     .container-fundamentos { grid-template-columns: repeat(2, 1fr); }
     .container-inimigos { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-    .menu { padding: 15px 4%; }
+    /* Menu Mobile */
+    .menu { 
+        padding: 15px 4%; 
+    }
+    .menu-links .texto-menu {
+        display: none;
+    }
+    .menu-links .icone-menu {
+        display: inline-block;
+        font-size: 1.2rem;
+    }
+    .menu-links a {
+        padding: 10px 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
     
-    /* Faz o texto e a logo empilharem verticalmente no celular */
-     .introducao { 
+    /* Introdução Mobile */
+    .introducao { 
         padding: 60px 4%; 
-        flex-direction: column-reverse; /* <--- Aqui acontece a mágica! */
+        flex-direction: column-reverse;
         text-align: center;
     }
     .bloco-texto-intro {
         max-width: 100%;
         text-align: center;
     }
-    .introducao h1 { font-size: 4.5rem; }
-    
+    .introducao h1 { 
+        font-size: 4.5rem; 
+    }
     .bloco-logo-intro {
         max-width: 100%;
         justify-content: center;
         margin-top: 20px;
     }
     .logo-introducao {
-        max-width: 70%; /* Evita que a logo fique gigante demais em telas mobile */
+        max-width: 85%; /* Ajustado para dar destaque adequado no celular */
     }
     
+    /* Objetivos Mobile */
     .objetivos {
         flex-direction: column;
         gap: 25px;
@@ -565,8 +598,12 @@ body {
         padding-bottom: 20px;
         width: 100%;
     }
-    .objetivos > div:nth-of-type(2) { padding-left: 0; width: 100%; }
+    .objetivos > div:nth-of-type(2) { 
+        padding-left: 0; 
+        width: 100%; 
+    }
 
+    /* Grids e Rodapé Mobile */
     .container-fundamentos { grid-template-columns: 1fr; }
     .container-inimigos { grid-template-columns: 1fr; }
     .container-rodape { flex-direction: column; gap: 30px; }

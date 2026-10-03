@@ -1,4 +1,6 @@
-/* --- COMPORTAMENTO GERAL --- */
+/* ========================================================== */
+/* 1. CONFIGURAÇÕES GERAIS E VARIÁVEIS (TODAS AS PÁGINAS)     */
+/* ========================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +9,16 @@
 }
 
 :root {
-    /* Paleta completa em tons de verde (Financeiro Premium) */
     --verde-fundo-profundo: #051c14;
-    /* Verde escuro Old Money para o fundo global #051c14*/
     --verde-card: #0b2d21;
-    /* Verde intermediário para os blocos */
     --verde-destaque: #00ff88;
-    /* Verde neon/esmeralda para botões e chamadas */
     --verde-suave: #a7ffd5;
-    /* Verde menta claro para textos secundários */
     --branco: #ffffff;
     --borda-vidro: rgba(255, 255, 255, 0.1);
+}
+
+html {
+    height: 100%;
 }
 
 body {
@@ -26,56 +27,112 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* --- MENU DE NAVEGAÇÃO --- */
-nav {
+main {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+/* ========================================================== */
+/* 2. MENU DE NAVEGAÇÃO E HEADER (TODAS AS PÁGINAS)          */
+/* ========================================================== */
+.cabecalho-principal {
+    background-color: #03120d;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 5%;
+}
+
+.container-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
-    background-color: rgba(5, 28, 20, 0.4);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(0, 255, 136, 0.4);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-nav h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 1px;
+/* --- ESTILO DA LOGO COM FOTO REDONDA --- */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+/* Foto do perfil redondinha na Navbar (mantém proporção 1:1 e nitidez) */
+.foto-perfil-nav {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    border: 0.5px solid var(--verde-destaque);;
+}
+
+.texto-logo {
+    color: var(--branco);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.texto-logo span {
     color: var(--verde-destaque);
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
-nav p {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--verde-suave);
+/* Links do Menu no PC */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 80px;
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
+.nav-menu a {
     color: var(--branco);
     text-decoration: none;
-    margin-left: 20px;
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size:17px;
     transition: color 0.3s;
 }
 
-nav a:hover {
+.nav-menu a:hover {
     color: var(--verde-destaque);
 }
 
-/* --- SEÇÃO PRINCIPAL (HERO) --- */
-section:nth-of-type(1) {
+/* Oculta o botão hambúrguer no Computador */
+.menu-hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--verde-destaque);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ========================================================== */
+/* 3. PÁGINA HOME (INDEX.HTML)                                */
+/* ========================================================== */
+
+/* Hero / Banner Principal */
+.hero-secao,
+section.hero-secao {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(5, 28, 20, 0.75), rgba(5, 28, 20, 0.85)), url(./img/img.2.PNG);
+    background-image: linear-gradient(rgba(5, 28, 20, 0.75), rgba(5, 28, 20, 0.55)), url(./img/img.2.PNG);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -96,23 +153,22 @@ section:nth-of-type(1) {
     position: relative;
 }
 
-/* O EFEITO ESFUMAÇADO DA FOTO (GRADIENT MASK) */
-section:nth-of-type(1) img {
+.hero-secao img {
     grid-column: 2;
     grid-row: 1 / span 5;
     width: 500px;
     max-width: 900px;
     height: 100%;
     object-fit: cover;
-    justify-self: center;
+    justify-self: end;
     position: relative;
     z-index: 1;
     -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
     mask-image: radial-gradient(rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
-    transform: scale(1.08) translateY(20px);
+    transform: scale(1.08) translateY(20px) translateX(60px); 
 }
 
-section:nth-of-type(1) h1 {
+.hero-secao h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 4rem;
     line-height: 1.1;
@@ -121,7 +177,6 @@ section:nth-of-type(1) h1 {
     position: relative;
 }
 
-/* --- CONTAINER QUE DEIXA OS ÍCONES ALINHADOS COM OS BOTÕES --- */
 .container-icones-linha {
     display: flex;
     justify-content: space-between;
@@ -148,8 +203,7 @@ section:nth-of-type(1) h1 {
     font-size: 1.1rem;
 }
 
-/* --- ESTILIZAÇÃO DOS BOTÕES DA SEÇÃO PRINCIPAL --- */
-section:nth-of-type(1) #btn-comecar-agora {
+.hero-secao #btn-comecar-agora {
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -163,9 +217,17 @@ section:nth-of-type(1) #btn-comecar-agora {
     position: relative;
     z-index: 2;
     text-decoration: none;
+    background-color: var(--verde-destaque);
+    color: var(--verde-fundo-profundo);
+    border: none;
 }
 
-section:nth-of-type(1) a.botao-apresentacao {
+.hero-secao #btn-comecar-agora:hover {
+    background-color: var(--branco);
+    transform: translateY(-3px);
+}
+
+.hero-secao a.botao-apresentacao {
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -179,35 +241,19 @@ section:nth-of-type(1) a.botao-apresentacao {
     position: relative;
     z-index: 2;
     text-decoration: none;
-}
-
-/* Botão Começar Agora */
-section:nth-of-type(1) #btn-comecar-agora {
-    background-color: var(--verde-destaque);
-    color: var(--verde-fundo-profundo);
-    border: none;
-}
-
-section:nth-of-type(1) #btn-comecar-agora:hover {
-    background-color: var(--branco);
-    transform: translateY(-3px);
-}
-
-/* Link Ver Como Funciona */
-section:nth-of-type(1) a.botao-apresentacao {
     background-color: transparent;
     color: var(--branco);
     border: 2px solid var(--verde-suave);
 }
 
-section:nth-of-type(1) a.botao-apresentacao:hover {
+.hero-secao a.botao-apresentacao:hover {
     background-color: rgba(167, 255, 213, 0.1);
     color: var(--verde-destaque);
     transform: translateY(-3px);
 }
 
-/* --- SEÇÃO BENEFÍCIOS --- */
-section:nth-of-type(2) {
+/* Seção Benefícios */
+.secao-beneficios {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -216,7 +262,7 @@ section:nth-of-type(2) {
     z-index: 1;
 }
 
-section:nth-of-type(2) div {
+.secao-beneficios div {
     background-color: var(--verde-card);
     padding: 30px 20px;
     border-radius: 8px;
@@ -225,48 +271,42 @@ section:nth-of-type(2) div {
     z-index: 2;
 }
 
-section:nth-of-type(2) div:hover {
+.secao-beneficios div:hover {
     transform: translateY(-5px);
-    z-index: 2;
 }
 
-section:nth-of-type(2) h2 {
+.secao-beneficios h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
     color: var(--verde-destaque);
     margin-bottom: 10px;
     letter-spacing: 1px;
-    z-index: 2;
 }
 
-section:nth-of-type(2) p {
+.secao-beneficios p {
     font-size: 0.9rem;
     color: var(--branco);
-    z-index: 2;
 }
 
-/* --- TÍTULO DAS FERRAMENTAS --- */
-body>div:nth-of-type(1) {
+/* Seção Ferramentas */
+.titulo-ferramentas {
     text-align: center;
     padding: 60px 5% 20px 5%;
     z-index: 2;
 }
 
-body>div:nth-of-type(1) h2 {
+.titulo-ferramentas h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.8rem;
     color: var(--branco);
-    z-index: 2;
 }
 
-body>div:nth-of-type(1) p {
+.titulo-ferramentas p {
     color: var(--verde-destaque);
     font-weight: 600;
-    z-index: 2;
 }
 
-/* --- SEÇÃO DE CARDS DAS FERRAMENTAS --- */
-section:nth-of-type(3) {
+.secao-ferramentas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
@@ -274,7 +314,7 @@ section:nth-of-type(3) {
     z-index: 2;
 }
 
-section:nth-of-type(3) div {
+.secao-ferramentas div {
     background: linear-gradient(135deg, #0b2d21 0%, #061c14 100%);
     padding: 40px;
     border-radius: 12px;
@@ -283,29 +323,25 @@ section:nth-of-type(3) div {
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.3s;
-    z-index: 2;
 }
 
-section:nth-of-type(3) div:hover {
+.secao-ferramentas div:hover {
     border-color: var(--verde-destaque);
     box-shadow: 0 10px 30px rgba(0, 255, 136, 0.05);
-    z-index: 2;
 }
 
-section:nth-of-type(3) h2 {
+.secao-ferramentas h2 {
     font-size: 1.5rem;
     color: var(--branco);
     margin-bottom: 10px;
-    z-index: 2;
 }
 
-section:nth-of-type(3) p {
+.secao-ferramentas p {
     color: var(--verde-suave);
     margin-bottom: 25px;
-    z-index: 2;
 }
 
-section:nth-of-type(3) button {
+.secao-ferramentas button {
     align-self: flex-start;
     background: transparent;
     color: var(--verde-destaque);
@@ -315,16 +351,14 @@ section:nth-of-type(3) button {
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.2s;
-    z-index: 2;
 }
 
-section:nth-of-type(3) button:hover {
+.secao-ferramentas button:hover {
     transform: translateX(5px);
     color: var(--branco);
-    z-index: 2;
 }
 
-/* --- SEÇÃO DIAGNÓSTICO IA --- */
+/* Diagnóstico IA */
 .diagnostico-ia-secao {
     padding: 80px 8%;
     background-color: rgba(1, 10, 5, 0.3);
@@ -365,7 +399,6 @@ section:nth-of-type(3) button:hover {
     font-size: 1.05rem;
 }
 
-/* Caixa do Quiz (Efeito Vidro Premium) */
 .quiz-box {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--borda-vidro);
@@ -376,7 +409,6 @@ section:nth-of-type(3) button:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Controle de Exibição dos Passos */
 .pergunta-bloco {
     animation: fadeInSuave 0.5s ease forwards;
 }
@@ -424,7 +456,6 @@ section:nth-of-type(3) button:hover {
     transform: translateX(5px);
 }
 
-/* Estado de Carregamento da IA */
 .carregador-ia {
     text-align: center;
     padding: 40px 0;
@@ -436,7 +467,6 @@ section:nth-of-type(3) button:hover {
     margin-bottom: 20px;
 }
 
-/* Tela de Resultado */
 .resultado-ia-conteudo {
     text-align: center;
 }
@@ -476,7 +506,7 @@ section:nth-of-type(3) button:hover {
     border-color: var(--branco);
 }
 
-/* --- SEÇÃO DE FEEDBACK --- */
+/* Feedback */
 .secao-feedback {
     padding: 80px 5%;
     background: linear-gradient(180deg, #061c14 0%, var(--verde-fundo-profundo) 100%);
@@ -551,119 +581,36 @@ section:nth-of-type(3) button:hover {
     letter-spacing: 1px;
 }
 
-/* --- RODAPÉ --- */
-footer {
-    background-color: #03120d;
-    padding: 50px 5% 20px 5%;
-    border-top: 1px solid rgba(0, 255, 136, 0.1);
-    z-index: 2;
-}
-
-footer>div:nth-of-type(1) {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 40px;
-    z-index: 2;
-}
-
-.coluna-rodape h3 {
-    color: var(--verde-destaque);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    z-index: 2;
-}
-
-.coluna-rodape ul {
-    list-style: none;
-    z-index: 2;
-}
-
-.coluna-rodape ul li {
-    margin-bottom: 10px;
-    z-index: 2;
-}
-
-.coluna-rodape a {
-    color: var(--branco);
-    text-decoration: none;
-    transition: color 0.3s;
-    z-index: 2;
-}
-
-.coluna-rodape a:hover {
-    color: var(--verde-destaque);
-    z-index: 2;
-}
-
-.coluna-rodape p {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    z-index: 2;
-}
-
-.icones-redes {
-    margin-top: 15px;
-    z-index: 2;
-}
-
-.icones-redes a {
-    display: inline-block;
-    margin-right: 15px;
-    background-color: rgba(0, 255, 136, 0.1);
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    transition: background-color 0.3s;
-    z-index: 2;
-}
-
-.direitos-autorais {
-    text-align: center;
-    border-top: 1px solid rgba(167, 255, 213, 0.1);
-    padding-top: 20px;
-    font-size: 0.85rem;
-    color: var(--verde-suave);
-    z-index: 2;
-}
-
 /* ========================================================== */
-/* SEÇÃO SOBRE PÁGINA */
+/* 4. PÁGINA SOBRE (SOBRE.HTML)                               */
 /* ========================================================== */
 .secao-sobre-pagina {
-    padding: 10px 0 60px 0 !important;
-    min-height: 100vh;
-    background-color: var(--verde-fundo-profundo);
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center;
-    width: 100% !important;
+    padding: 40px 0 80px 0;
+    width: 100%;
     box-sizing: border-box;
 }
 
 .container-sobre-pagina {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    max-width: 1200px;
-    width: 90% !important;
-    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
     gap: 40px;
-    height: auto !important;
 }
 
 .video-sobre {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto !important;
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .video-sobre iframe {
     width: 100%;
-    height: 350px;
+    height: 480px;
     border-radius: 12px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     border: 2px solid rgba(0, 255, 136, 0.2);
@@ -671,68 +618,47 @@ footer>div:nth-of-type(1) {
 }
 
 .texto-sobre {
-    width: 100% !important;
-    text-align: center !important;
+    width: 100%;
+    text-align: center;
 }
 
 .texto-sobre h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.8rem;
+    font-size: 3.5rem;
     color: var(--branco);
-    margin-top: -20px;
+    margin-bottom: 30px;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .blocos-texto-sobre {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    gap: 60px;
-    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
     text-align: left;
 }
 
 .blocos-texto-sobre p {
-    flex: 1 !important;
+    flex: 1 1 0px;
+    min-width: 0;
+    width: 100%;
     color: var(--verde-suave);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     margin: 0;
 }
 
-/* --- WHATSAPP FLUTUANTE --- */
-.whatsapp-flutuante {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    z-index: 9999;
-    transition: transform 0.3s, background-color 0.3s;
-    text-decoration: none;
-}
-
-.whatsapp-flutuante:hover {
-    background-color: #1ebd58;
-    transform: scale(1.1);
-}
-
-/* --- SEÇÃO APRESENTAÇÃO PÁGINA --- */
+/* ========================================================== */
+/* 5. PÁGINA APRESENTAÇÃO (APRESENTACAO.HTML)                 */
+/* ========================================================== */
 .secao-apresentacao-pagina {
     padding: 10px 0 60px 0 !important;
     min-height: 100vh;
     background-color: var(--verde-fundo-profundo);
-    display: inline-block !important;
-    justify-content: center !important;
-    align-items: center !important;
+    display: block !important;
     width: 100% !important;
     box-sizing: border-box;
 }
@@ -796,15 +722,102 @@ footer>div:nth-of-type(1) {
     display: block;
 }
 
-/* --- RODAPÉ MINIMALISTA --- */
+/* ========================================================== */
+/* 6. RODAPÉS E ELEMENTOS FLUTUANTES (COMPARTILHADO)          */
+/* ========================================================== */
+
+/* Rodapé Completo */
+footer.rodape-completo {
+    background-color: #03120d;
+    padding: 50px 5% 20px 5%;
+    border-top: 1px solid rgba(0, 255, 136, 0.1);
+    z-index: 2;
+}
+
+.container-rodape {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.coluna-rodape h3 {
+    color: var(--verde-destaque);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.coluna-rodape ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.coluna-rodape ul li {
+    margin-bottom: 12px;
+}
+
+.coluna-rodape a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.coluna-rodape a:hover {
+    color: var(--verde-destaque);
+}
+
+/* Ícones de Contato - Um abaixo do outro no Desktop */
+.icones-redes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.icones-redes a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 255, 136, 0.1);
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    width: fit-content;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.icones-redes a:hover {
+    background-color: rgba(0, 255, 136, 0.25);
+    transform: translateX(4px);
+}
+
+.icones-redes a i {
+    font-size: 1.1rem;
+    color: var(--verde-destaque);
+}
+
+/* Direitos Autorais */
+.direitos-autorais {
+    text-align: center;
+    border-top: 1px solid rgba(167, 255, 213, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: var(--verde-suave);
+}
+
+/* Rodapé Minimalista (Sobre e Apresentação) */
 .rodape-minimalista {
+    flex-shrink: 0;
     background-color: #030e0a;
-    padding: 60px 5% 40px 5%;
+    padding: 40px 5%;
     width: 100%;
     box-sizing: border-box;
     border-top: 1px solid rgba(0, 255, 136, 0.05);
-    position: relative;
-    z-index: 2;
+    text-align: center;
 }
 
 .conteudo-rodape-minimalista {
@@ -815,17 +828,44 @@ footer>div:nth-of-type(1) {
 
 .frase-impacto {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 400;
     font-style: italic;
     color: #25D366;
     line-height: 1.6;
-    margin-bottom: 40px;
+    margin: 0;
     letter-spacing: 0.5px;
     opacity: 0.9;
 }
 
-/* --- ANIMAÇÃO DE FLUTUAÇÃO --- */
+/* Botão Flutuante do WhatsApp */
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+}
+
+.whatsapp-flutuante:hover {
+    background-color: #1ebd58;
+    transform: scale(1.1);
+}
+
+/* ========================================================== */
+/* 7. ANIMAÇÕES                                               */
+/* ========================================================== */
 .efeito-flutuar {
     opacity: 0;
     transform: translateY(50px);
@@ -843,7 +883,6 @@ footer>div:nth-of-type(1) {
         opacity: 0;
         transform: translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -851,20 +890,13 @@ footer>div:nth-of-type(1) {
 }
 
 /* ========================================================== */
-/* RESPONSIVIDADE ADAPTATIVA (CELULAR & TABLETS) */
+/* RESPONSIVIDADE ADAPTATIVA (DISPOSITIVOS MÓVEIS E TABLETS)  */
 /* ========================================================== */
+
 @media (max-width: 968px) {
 
-    html,
-    body {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-    }
-
-    body,
-    main,
-    .conteudo-principal {
+    /* --- 1. RESET E ESTRUTURA GLOBAL --- */
+    html, body, main, .conteudo-principal {
         width: 100% !important;
         max-width: 100% !important;
         padding-left: 0 !important;
@@ -874,59 +906,134 @@ footer>div:nth-of-type(1) {
         overflow-x: hidden !important;
     }
 
-    section {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important;
+    /* --- 2. HEADER E NAV NO CELULAR --- */
+    .container-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 
-    section:nth-of-type(1) {
-        height: auto !important;
-        max-height: none !important;
-        min-height: auto !important;
-        overflow: visible !important;
-        position: relative;
-        z-index: 10;
+    .foto-perfil-nav {
+        width: 65px;
+        height: 65px;
+    }
+
+    .texto-logo {
+        font-size: 0.95rem;
+    }
+
+    .texto-logo span {
+        font-size: 0.75rem;
+    }
+
+    .menu-hamburguer {
+        display: block; /* Mostra o botão das 3 listrinhas */
+    }
+
+    /* Esconde o menu e prepara o painel suspenso */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #03120d;
+        border-bottom: 2px solid var(--verde-destaque);
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Quando clicar no botão, esta classe é ativada via JS */
+    .nav-menu.ativo {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nav-menu a {
+        font-size: 1.1rem;
+    }
+
+    .secao-sobre-pagina {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* --- 3. SEÇÃO HERO / INTRODUÇÃO (INDEX) --- */
+    .hero-secao {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
-        padding: 100px 20px 40px 20px !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        position: relative;
+        z-index: 10;
+        padding: 80px 20px 40px 20px !important;
     }
 
-    section:nth-of-type(1) h1 {
-        font-size: 2.4rem !important;
+    .imagem-hero-container { 
+        order: 1 !important;
         width: 100% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 25px !important;
+    }
+
+    .imagem-hero-container img,
+    .hero-secao img {
+        width: 100% !important;
+        max-width: 400px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        display: block !important;
+        justify-self: center !important;
+        transform: none !important;
+    }
+
+    .conteudo-hero { 
+        order: 2 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .hero-secao h1 {
+        font-size: 2.2rem !important;
+        width: 100% !important;
+        margin: 0 auto 15px auto !important;
         text-align: center !important;
     }
 
     .descricao-hero {
-        font-size: 1.1rem !important;
-        margin: 20px auto !important;
+        font-size: 1.05rem !important;
+        margin: 0 auto 20px auto !important;
         width: 100% !important;
-        max-width: 500px;
+        max-width: 500px !important;
         text-align: center !important;
     }
 
-    section:nth-of-type(1) img {
+    .botoes-hero {
         width: 100% !important;
-        max-width: 320px !important;
-        height: auto !important;
-        margin: 0 auto 20px auto !important;
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-bottom: 20px !important;
     }
 
-    section:nth-of-type(1) #btn-comecar-agora,
-    section:nth-of-type(1) a.botao-apresentacao {
-        margin-bottom: 15px !important;
-        margin-right: auto !important;
-        margin-left: auto !important;
+    .hero-secao #btn-comecar-agora,
+    .hero-secao a.botao-apresentacao {
+        margin: 0 !important;
         display: block !important;
         width: 85% !important;
         max-width: 300px !important;
@@ -937,11 +1044,9 @@ footer>div:nth-of-type(1) {
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 15px;
+        gap: 12px !important;
         width: 100% !important;
-        max-width: 100% !important;
-        margin-top: 15px !important;
-        margin-bottom: 25px !important;
+        margin-top: 10px !important;
     }
 
     .texto-com-icone {
@@ -951,14 +1056,15 @@ footer>div:nth-of-type(1) {
         width: 100% !important;
     }
 
-    section:nth-of-type(2) {
+    /* --- 4. SEÇÕES DE CONTEÚDO (BENEFÍCIOS, FERRAMENTAS E FEEDBACK) --- */
+    .secao-beneficios {
         position: relative;
         z-index: 1;
         grid-template-columns: 1fr !important;
         gap: 20px;
     }
 
-    section:nth-of-type(3) {
+    .secao-ferramentas {
         grid-template-columns: 1fr !important;
     }
 
@@ -967,35 +1073,117 @@ footer>div:nth-of-type(1) {
         gap: 20px;
     }
 
-    .diagnostico-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    /* --- 5. DIAGNÓSTICO COM IA --- */
+    .diagnostico-ia-secao {
+        padding: 40px 15px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
-    .diagnostico-intro {
+    .diagnostico-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
+    .diagnostico-intro {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .diagnostico-intro h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
     .quiz-box {
-        padding: 25px;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
 
-    footer>div:nth-of-type(1) {
-        flex-direction: column !important;
+    .opcoes-grupo {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
     }
 
+    .btn-opcao {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 12px 15px;
+        font-size: 0.95rem;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .grafico-container {
+        width: 100% !important;
+        max-width: 280px;
+        height: 220px !important;
+        margin: 15px auto !important;
+    }
+
+    .resultado-ia-conteudo {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+
+    .btn-whatsapp-mentoria {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* --- 6. SEÇÃO SOBRE & VÍDEOS --- */
     .frase-impacto {
         font-size: 1.15rem;
-        margin-bottom: 30px;
-    }
-
-    .texto-sobre h2 {
-        font-size: 40px;
     }
 
     .blocos-texto-sobre {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .texto-sobre h2 {
+        font-size: 2.8rem;
+    }
+
+    .video-sobre iframe,
+    .video-apresentacao iframe {
+        height: 250px;
+    }
+
+    /* --- 7. RODAPÉ & BOTÃO FLUTUANTE NO CELULAR --- */
+    .container-rodape {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    .coluna-rodape h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+
+    .icones-redes a {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 12px;
+        font-size: 0.85rem;
     }
 
     .whatsapp-flutuante {

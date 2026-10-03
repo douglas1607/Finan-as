@@ -193,7 +193,7 @@ if (blocosPerguntas.length > 0) {
                 pergunta.style.display = "none"; // Esconde a atual
 
                 const proximaPergunta = document.querySelector(`.pergunta-bloco[data-step="${stepAtual + 1}"]`);
-                
+
                 if (proximaPergunta) {
                     proximaPergunta.style.display = "block"; // Mostra a próxima
                     if (spanNumAtual) {
@@ -223,13 +223,13 @@ function calcularEExibirResultado(pontosTotais, scores) {
 
     // ALGORITMO DE DISTRIBUIÇÃO REAL DO DINHEIRO (CONVERSÃO EM CHOQUE)
     // Gastos: Quanto menor o score, maior é a fatia engolida de gastos descontrolados (até 95%)
-    let taxaGastos = 100 - ((scores.gastos - 4) * 5.6); 
-    
+    let taxaGastos = 100 - ((scores.gastos - 4) * 5.6);
+
     // Reserva: Relacionada diretamente com a proteção (de 0% a ~20%)
-    let taxaReserva = (scores.reserva - 3) * 3.3; 
-    
+    let taxaReserva = (scores.reserva - 3) * 3.3;
+
     // Investimento: Relacionada diretamente com poupar e planejar o futuro (de 0% a ~30%)
-    let taxaInvestimento = (scores.investimento - 3) * 4.1; 
+    let taxaInvestimento = (scores.investimento - 3) * 4.1;
 
     // Ajuste matemático para garantir fechamento perfeito em 100%
     let somaTemporaria = taxaGastos + taxaReserva + taxaInvestimento;
@@ -267,8 +267,8 @@ function calcularEExibirResultado(pontosTotais, scores) {
             type: 'pie',
             data: {
                 labels: [
-                    `Gastos & Despesas (${percentualGastos}%)`, 
-                    `Reserva de Emergência (${percentualReserva}%)`, 
+                    `Gastos & Despesas (${percentualGastos}%)`,
+                    `Reserva de Emergência (${percentualReserva}%)`,
                     `Investimentos (${percentualInvestimento}%)`
                 ],
                 datasets: [{
@@ -307,7 +307,7 @@ function calcularEExibirResultado(pontosTotais, scores) {
 function reiniciarQuiz() {
     if (divResultado) divResultado.style.display = "none";
     if (divCarregando) divCarregando.style.display = "none";
-    
+
     pontosCategorias = { gastos: 0, reserva: 0, investimento: 0 };
     totalPontosGlobal = 0;
 
@@ -323,3 +323,19 @@ function reiniciarQuiz() {
     if (spanNumAtual) spanNumAtual.textContent = "1";
     if (containerProgresso) containerProgresso.style.display = "block";
 }
+
+const btnMenu = document.getElementById('btn-menu');
+const navMenu = document.getElementById('nav-menu');
+
+// Alterna a classe 'ativo' ao clicar no botão das 3 listrinhas
+btnMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('ativo');
+});
+
+// Fecha o menu automaticamente quando o usuário clica em qualquer link
+const linksMenu = document.querySelectorAll('.nav-menu a');
+linksMenu.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('ativo');
+    });
+});
