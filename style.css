@@ -132,7 +132,7 @@ section.hero-secao {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(5, 28, 20, 0.75), rgba(5, 28, 20, 0.55)), url(./img/img-fundo.PNG);
+    background-image: linear-gradient(rgba(5, 28, 20, 0.75), rgba(5, 28, 20, 0.55)), url(img-fundo.PNG);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
