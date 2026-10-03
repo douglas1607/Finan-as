@@ -5,7 +5,7 @@ const btnComecarAgora = document.getElementById('btn-comecar-agora');
 
 if (btnComecarAgora) {
     btnComecarAgora.addEventListener('click', () => {
-        const numeroWhats = "5585992826206"; // Telefone do Luís
+        const numeroWhats = "5585992847982"; // Telefone do Luís
         const mensagem = encodeURIComponent("Olá Luís, conheci seu site e gostaria de agendar uma mentoria para transformar minha vida financeira!");
         window.open(`https://wa.me/${numeroWhats}?text=${mensagem}`, '_blank');
     });
