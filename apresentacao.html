@@ -19,16 +19,31 @@
 
 <body>
 
-    <header style="position: relative; background-color: var(--verde-fundo-profundo);">
-        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%;">
-            <div class="logo" style="font-family: 'Bebas Neue'; font-size: 2rem; color: var(--branco);">
-                Luís <span style="color: var(--verde-destaque);">Holanda</span>
-            </div>
-            <ul style="display: flex; list-style: none; gap: 30px;">
-                <li><a href="index.html"
-                        style="color: var(--verde-destaque); text-decoration: none; font-weight: 600;">Início</a></li>
-            </ul>
-        </nav>
+    <header class="cabecalho-principal">
+        <div class="container-header">
+            <!-- Logo / Brand na Esquerda (Foto + Texto) -->
+            <a href="index.html" class="logo">
+                <img src="logo-educador-financeiro.png" alt="Luís Holanda" class="foto-perfil-nav">
+                <div class="texto-logo">
+                    Luís Holanda <span>Educação Financeira</span>
+                </div>
+            </a>
+
+            <!-- Botão Hambúrguer (Mobile) -->
+            <button class="menu-hamburguer" id="btn-menu" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Links de Navegação -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="index.html#feedback">Feedback</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="secao-apresentacao-pagina">
@@ -52,6 +67,25 @@
             <a href="pilar4.html" class="botao-pilar">Pilar 4</a>
         </div>
     </section>
+
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (btnMenu && navMenu) {
+            btnMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('ativo');
+            });
+
+            const linksMenu = document.querySelectorAll('.nav-menu a');
+            linksMenu.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('ativo');
+                });
+            });
+        }
+    </script>
+
 
 </body>
 

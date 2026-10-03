@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
     <title>Sobre o Educador - Mentoria Financeira</title>
@@ -15,17 +14,32 @@
 
 <body>
 
-    <header class="header-principal">
-        <nav class="nav-container">
-            <div class="logo">
-                Luís <span>Holanda</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html" class="ativo">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="cabecalho-principal">
+        <div class="container-header">
+            <!-- Logo / Brand na Esquerda (Foto + Texto) -->
+            <a href="index.html" class="logo">
+                <img src="logo-educador-financeiro.png" alt="Luís Holanda" class="foto-perfil-nav">
+                <div class="texto-logo">
+                    Luís Holanda <span>Educação Financeira</span>
+                </div>
+            </a>
+
+            <!-- Botão Hambúrguer (Mobile) -->
+            <button class="menu-hamburguer" id="btn-menu" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Links de Navegação -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#feedback">Feedback</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> <!-- FECHAMENTO CORRETO DO HEADER -->
 
     <main>
         <section class="secao-sobre-pagina">
@@ -48,21 +62,15 @@
                     <div class="blocos-texto-sobre">
                         <p>A trajetória de Luiz Hollanda é movida pela convicção de que a liberdade financeira não é um
                             privilégio de poucos, mas um caminho acessível a quem decide dominar o próprio dinheiro.
-                            Após
-                            anos encarando os desafios reais do mercado e compreendendo a fundo as armadilhas que travam
-                            o
-                            crescimento de tantas famílias, ele transformou sua experiência em um propósito claro:
+                            Após anos encarando os desafios reais do mercado e compreendendo a fundo as armadilhas que travam
+                            o crescimento de tantas famílias, ele transformou sua experiência em um propósito claro:
                             desmistificar as finanças e entregar ferramentas práticas para que qualquer pessoa possa
                             construir um patrimônio sólido com autonomia e segurança.</p>
                         <p>Hoje, como educador financeiro, Luiz Hollanda não ensina apenas a economizar ou investir, mas
-                            a
-                            mudar a relação com o futuro. Com uma metodologia direta e humanizada, ele já guiou dezenas
-                            de
-                            pessoas a saírem do ciclo de incertezas e assumirem o controle do próprio destino. Mais do
-                            que
-                            números e planilhas, seu trabalho é sobre realizar sonhos, conquistar a tranquilidade da
-                            família
-                            e provar que você está a apenas uma decisão de transformar permanentemente a sua vida
+                            a mudar a relação com o futuro. Com uma metodologia direta e humanizada, ele já guiou dezenas
+                            de pessoas a saírem do ciclo de incertezas e assumirem o controle do próprio destino. Mais do
+                            que números e planilhas, seu trabalho é sobre realizar sonhos, conquistar a tranquilidade da
+                            família e provar que você está a apenas uma decisão de transformar permanentemente a sua vida
                             financeira.</p>
                     </div>
                 </div>
@@ -85,6 +93,25 @@
             </p>
         </div>
     </footer>
+    
+    <!-- SCRIPT DO MENU HAMBÚRGUER -->
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (btnMenu && navMenu) {
+            btnMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('ativo');
+            });
+
+            const linksMenu = document.querySelectorAll('.nav-menu a');
+            linksMenu.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('ativo');
+                });
+            });
+        }
+    </script>
 
 </body>
 
