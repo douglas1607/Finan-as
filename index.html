@@ -19,50 +19,49 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:,">
 
-    <title>Educação Financeira - Luís Holanda</title>
+    <title>Luís Holanda — Financial & Mentoria</title>
 </head>
 
 <body>
 
     <!-- 1. MENU DE NAVEGAÇÃO -->
-  <header class="cabecalho-principal">
-    <div class="container-header">
-        <!-- Brand / Logo no Canto Esquerdo (Foto + Texto) -->
-        <a href="index.html" class="logo">
-            <img src="logo-educador-financeiro.png" alt="Luís Holanda" class="foto-perfil-nav">
-            <div class="texto-logo">
-                Luís Holanda <span>Educação Financeira</span>
-            </div>
-        </a>
+    <header class="cabecalho-principal">
+        <div class="container-header">
+            <!-- Brand / Logo no Canto Esquerdo -->
+            <a href="index.html" class="logo">
+                <img src="logo-educador-financeiro.png" alt="Luís Holanda" class="foto-perfil-nav">
+                <div class="texto-logo">
+                    Luís Holanda <span>EDUCADOR FINANCEIRO</span>
+                </div>
+            </a>
 
-        <!-- Botão Hambúrguer no Canto Direito -->
-        <button class="menu-hamburguer" id="btn-menu" aria-label="Abrir Menu">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+            <!-- Botão Hambúrguer no Canto Direito -->
+            <button class="menu-hamburguer" id="btn-menu" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-        <!-- Menu de Links Suspenso -->
-        <nav class="nav-menu" id="nav-menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+            <!-- Menu de Links Suspenso -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Início</a></li>
+                    <li><a href="sobre.html"><i class="fa-solid fa-user"></i> Sobre</a></li>
+                    <li><a href="curso.html"><i class="fa-solid fa-graduation-cap"></i> Curso Grátis</a></li>
+                    <li><a href="https://wa.me/5585992847982" target="_blank" class="btn-contato-glow"><i class="fa-brands fa-whatsapp"></i> Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main class="conteudo-principal">
 
         <!-- 2. SEÇÃO PRINCIPAL (HERO) -->
         <section class="hero-secao">
             <div class="conteudo-hero">
-                <h1>Transforme sua vida financeira hoje!</h1>
-                <p class="descricao-hero">Aprenda a administrar, investir e fazer seu dinheiro trabalhar para você.
-                    Conteúdo prático e acessível para todos os níveis.</p>
+                <h1>Transforme sua vida financeira com <span>sabedoria e propósito</span></h1>
+                <p class="descricao-hero">Aprenda a administrar, investir e fazer seu dinheiro trabalhar para você através de princípios práticos e acessíveis.</p>
 
                 <div class="botoes-hero">
-                    <button id="btn-comecar-agora">Começar agora</button>
+                    <a href="curso.html" id="btn-comecar-agora"><i class="fa-solid fa-play"></i> Começar Mini Curso</a>
                     <a href="apresentacao.html" class="botao-apresentacao">Ver como funciona</a>
                 </div>
 
@@ -96,6 +95,15 @@
                 <h2>Conquiste</h2>
                 <p>Alcance seus objetivos financeiros e conquiste a liberdade que você merece.</p>
             </div>
+        </section>
+
+        <!-- --- NOVO BANNER DE ACESSO AO CURSO --- -->
+        <section class="banner-curso-destaque efeito-flutuar">
+            <div class="conteudo-banner-curso">
+                <h3><i class="fa-solid fa-book-bible"></i> MINI CURSO 100% GRATUITO</h3>
+                <p>Sabedoria Financeira na Palavra de Deus: 10 módulos interativos com exercícios e gabarito em tempo real direto na plataforma.</p>
+            </div>
+            <a href="curso.html" class="btn-curso-glow"><i class="fa-solid fa-laptop-code"></i> Acessar Plataforma EAD</a>
         </section>
 
         <!-- 4. TÍTULO DAS FERRAMENTAS -->
@@ -169,12 +177,9 @@
                         <span class="numero-passo">Etapa 1: Consumo</span>
                         <h3>1. Como você monitora e acompanha suas despesas diárias?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Não acompanho. Só descubro o saldo quando olho o
-                                extrato ou o cartão é recusado.</button>
-                            <button class="btn-opcao" data-points="2">Tenho apenas uma noção mental de cabeça dos meus
-                                limites.</button>
-                            <button class="btn-opcao" data-points="3">Registro tudo de forma organizada em planilha ou
-                                aplicativo.</button>
+                            <button class="btn-opcao" data-points="1">Não acompanho. Só descubro o saldo quando olho o extrato ou o cartão é recusado.</button>
+                            <button class="btn-opcao" data-points="2">Tenho apenas uma noção mental de cabeça dos meus limites.</button>
+                            <button class="btn-opcao" data-points="3">Registro tudo de forma organizada em planilha ou aplicativo.</button>
                         </div>
                     </div>
 
@@ -182,12 +187,9 @@
                         <span class="numero-passo">Etapa 1: Consumo</span>
                         <h3>2. Com que frequência você realiza compras por impulso (roupas, delivery, etc.)?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Frequentemente. Se gostei e tenho limite, acabo
-                                comprando.</button>
-                            <button class="btn-opcao" data-points="2">Às vezes, principalmente quando estou ansioso ou
-                                vejo promoções.</button>
-                            <button class="btn-opcao" data-points="3">Raramente. Planejo minhas compras com
-                                antecedência.</button>
+                            <button class="btn-opcao" data-points="1">Frequentemente. Se gostei e tenho limite, acabo comprando.</button>
+                            <button class="btn-opcao" data-points="2">Às vezes, principalmente quando estou ansioso ou vejo promoções.</button>
+                            <button class="btn-opcao" data-points="3">Raramente. Planejo minhas compras com antecedência.</button>
                         </div>
                     </div>
 
@@ -195,12 +197,9 @@
                         <span class="numero-passo">Etapa 1: Consumo</span>
                         <h3>3. Como está o seu atual padrão de vida em relação aos seus ganhos mensais?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Meu custo de vida é maior do que eu ganho
-                                atualmente.</button>
-                            <button class="btn-opcao" data-points="2">Vivo no limite. Empato o jogo todo mês e não sobra
-                                nada.</button>
-                            <button class="btn-opcao" data-points="3">Vivo um padrão confortável que fica abaixo do que
-                                ganho.</button>
+                            <button class="btn-opcao" data-points="1">Meu custo de vida é maior do que eu ganho atualmente.</button>
+                            <button class="btn-opcao" data-points="2">Vivo no limite. Empato o jogo todo mês e não sobra nada.</button>
+                            <button class="btn-opcao" data-points="3">Vivo um padrão confortável que fica abaixo do que ganho.</button>
                         </div>
                     </div>
 
@@ -208,12 +207,9 @@
                         <span class="numero-passo">Etapa 1: Consumo</span>
                         <h3>4. Você costuma revisar suas assinaturas, tarifas bancárias e pequenos gastos?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Nunca revisei. Pago tudo no débito automático sem
-                                perceber.</button>
-                            <button class="btn-opcao" data-points="2">Sei que pago algumas coisas desnecessárias, mas
-                                tenho preguiça de cancelar.</button>
-                            <button class="btn-opcao" data-points="3">Sim, anualmente reviso e cancelo tudo que não gera
-                                valor.</button>
+                            <button class="btn-opcao" data-points="1">Nunca revisei. Pago tudo no débito automático sem perceber.</button>
+                            <button class="btn-opcao" data-points="2">Sei que pago algumas coisas desnecessárias, mas tenho preguiça de cancelar.</button>
+                            <button class="btn-opcao" data-points="3">Sim, anualmente reviso e cancelo tudo que não gera valor.</button>
                         </div>
                     </div>
 
@@ -221,12 +217,9 @@
                         <span class="numero-passo">Etapa 2: Segurança</span>
                         <h3>5. Se você perdesse sua principal renda hoje, por quanto tempo manteria seu padrão?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Menos de um mês. Teria problemas graves
-                                imediatamente.</button>
-                            <button class="btn-opcao" data-points="2">Entre 1 a 3 meses, apertando bastante o
-                                cinto.</button>
-                            <button class="btn-opcao" data-points="3">6 meses ou mais. Tenho uma reserva bem
-                                estruturada.</button>
+                            <button class="btn-opcao" data-points="1">Menos de um mês. Teria problemas graves imediatamente.</button>
+                            <button class="btn-opcao" data-points="2">Entre 1 a 3 meses, apertando bastante o cinto.</button>
+                            <button class="btn-opcao" data-points="3">6 meses ou mais. Tenho uma reserva bem estruturada.</button>
                         </div>
                     </div>
 
@@ -234,12 +227,9 @@
                         <span class="numero-passo">Etapa 2: Segurança</span>
                         <h3>6. Diante de um imprevisto caro, o que você costuma fazer?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Entro no cheque especial ou parcelo com juros
-                                altos.</button>
-                            <button class="btn-opcao" data-points="2">Uso o cartão ou pego dinheiro guardado para outros
-                                planos.</button>
-                            <button class="btn-opcao" data-points="3">Uso minha reserva de emergência guardada para
-                                isso.</button>
+                            <button class="btn-opcao" data-points="1">Entro no cheque especial ou parcelo com juros altos.</button>
+                            <button class="btn-opcao" data-points="2">Uso o cartão ou pego dinheiro guardado para outros planos.</button>
+                            <button class="btn-opcao" data-points="3">Uso minha reserva de emergência guardada para isso.</button>
                         </div>
                     </div>
 
@@ -247,12 +237,9 @@
                         <span class="numero-passo">Etapa 2: Segurança</span>
                         <h3>7. Qual é a sua atual relação com dívidas ou faturas atrasadas?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Estou endividado ou com faturas em atraso
-                                acumulando juros.</button>
-                            <button class="btn-opcao" data-points="2">Tenho muitas parcelas acumuladas que comprometem o
-                                orçamento.</button>
-                            <button class="btn-opcao" data-points="3">Não tenho dívidas de consumo e compro à vista ou
-                                planejado.</button>
+                            <button class="btn-opcao" data-points="1">Estou endividado ou com faturas em atraso acumulando juros.</button>
+                            <button class="btn-opcao" data-points="2">Tenho muitas parcelas acumuladas que comprometem o orçamento.</button>
+                            <button class="btn-opcao" data-points="3">Não tenho dívidas de consumo e compro à vista ou planejado.</button>
                         </div>
                     </div>
 
@@ -260,11 +247,9 @@
                         <span class="numero-passo">Etapa 3: Multiplicação</span>
                         <h3>8. Qual percentual da sua renda você consegue poupar todo mês?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">0%. Não sobra absolutamente nada para
-                                guardar.</button>
+                            <button class="btn-opcao" data-points="1">0%. Não sobra absolutamente nada para guardar.</button>
                             <button class="btn-opcao" data-points="2">Menos de 10%, e de forma muito irregular.</button>
-                            <button class="btn-opcao" data-points="3">10% ou mais, guardados logo no início do
-                                mês.</button>
+                            <button class="btn-opcao" data-points="3">10% ou mais, guardados logo no início do mês.</button>
                         </div>
                     </div>
 
@@ -273,10 +258,8 @@
                         <h3>9. Onde se encontra o dinheiro que você consegue guardar?</h3>
                         <div class="opcoes-grupo">
                             <button class="btn-opcao" data-points="1">Fica parado na conta corrente ou em mãos.</button>
-                            <button class="btn-opcao" data-points="2">Está todo aplicado na Poupança tradicional do
-                                banco.</button>
-                            <button class="btn-opcao" data-points="3">Está diversificado em investimentos reais (renda
-                                fixa, ações, etc.).</button>
+                            <button class="btn-opcao" data-points="2">Está todo aplicado na Poupança tradicional do banco.</button>
+                            <button class="btn-opcao" data-points="3">Está diversificado em investimentos reais (renda fixa, ações, etc.).</button>
                         </div>
                     </div>
 
@@ -284,12 +267,9 @@
                         <span class="numero-passo">Etapa 3: Multiplicação</span>
                         <h3>10. Como está estruturado o seu plano para a aposentadoria/independência?</h3>
                         <div class="opcoes-grupo">
-                            <button class="btn-opcao" data-points="1">Não tenho plano algum ou dependo exclusivamente do
-                                INSS.</button>
-                            <button class="btn-opcao" data-points="2">Sei que preciso fazer algo, mas ainda não comecei
-                                na prática.</button>
-                            <button class="btn-opcao" data-points="3">Já invisto focado na minha independência
-                                financeira.</button>
+                            <button class="btn-opcao" data-points="1">Não tenho plano algum ou dependo exclusivamente do INSS.</button>
+                            <button class="btn-opcao" data-points="2">Sei que preciso fazer algo, mas ainda não comecei na prática.</button>
+                            <button class="btn-opcao" data-points="3">Já invisto focado na minha independência financeira.</button>
                         </div>
                     </div>
 
@@ -306,7 +286,7 @@
                             <i class="fa-solid fa-chart-pie icone-resultado"></i>
                             <h2 id="texto-resultado">Seu Diagnóstico Personalizado</h2>
 
-                            <div class="grafico-container">
+                            <div class="grafico-container" style="max-width: 300px; margin: 20px auto;">
                                 <canvas id="graficoPizza"></canvas>
                             </div>
 
@@ -316,10 +296,9 @@
                             </div>
 
                             <a href="https://wa.me/5585992847982?text=Olá%20Luís,%20fiz%20o%20meu%20diagnóstico%20financeiro%20no%20seu%20site%20e%20quero%20mudar%20minha%20realidade!"
-                                target="_blank" class="botao-pilar btn-whatsapp-mentoria">
+                                target="_blank" class="botao-pilar btn-whatsapp-mentoria" style="display: inline-block; width: 100%; text-align: center; margin-bottom: 15px;">
                                 <i class="fa-brands fa-whatsapp"></i> Agendar Mentoria Gratuita
                             </a>
-                            <br><br>
                             <button class="btn-reiniciar" onclick="reiniciarQuiz()">Refazer Diagnóstico</button>
                         </div>
                     </div>
@@ -337,8 +316,7 @@
             <div class="container-feedback">
                 <div class="card-feedback efeito-flutuar">
                     <div class="estrelas">★★★★★</div>
-                    <p class="texto-feedback">"O desafio das 52 semanas mudou minha relação com o dinheiro. Comecei
-                        achando que não conseguiria, e hoje já tenho minha primeira reserva de emergência guardada!"</p>
+                    <p class="texto-feedback">"O desafio das 52 semanas mudou minha relação com o dinheiro. Comecei achando que não conseguiria, e hoje já tenho minha primeira reserva de emergência guardada!"</p>
                     <div class="autor-feedback">
                         <h4>Mariana Souza</h4>
                         <span>Aluna da Mentoria</span>
@@ -347,8 +325,7 @@
 
                 <div class="card-feedback efeito-flutuar">
                     <div class="estrelas">★★★★★</div>
-                    <p class="texto-feedback">"As ferramentas do site são incríveis e fáceis de usar. O simulador de
-                        metas me deu o caminho exato para planejar a compra do meu carro sem me endividar."</p>
+                    <p class="texto-feedback">"As ferramentas do site são incríveis e fáceis de usar. O simulador de metas me deu o caminho exato para planejar a compra do meu carro sem me endividar."</p>
                     <div class="autor-feedback">
                         <h4>Carlos Eduardo</h4>
                         <span>Cliente de Planejamento</span>
@@ -357,8 +334,7 @@
 
                 <div class="card-feedback efeito-flutuar">
                     <div class="estrelas">★★★★★</div>
-                    <p class="texto-feedback">"A mentoria do Luís abriu meus olhos para os juros compostos. O site
-                        reflete exatamente o método prático que ele ensina. Recomendo para todo mundo!"</p>
+                    <p class="texto-feedback">"A mentoria do Luís abriu meus olhos para os juros compostos. O site reflete exatamente o método prático que ele ensina. Recomendo para todo mundo!"</p>
                     <div class="autor-feedback">
                         <h4>Beatriz Ribeiro</h4>
                         <span>Investidora Iniciante</span>
@@ -377,38 +353,35 @@
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="curso.html">Curso Grátis</a></li>
                 </ul>
             </div>
 
             <div class="coluna-rodape contato-redes">
                 <h3>Contato</h3>
                 <div class="icones-redes">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luisholanda.educadorfinanceiro@gmail.com&su=Agendamento%20de%20Mentoria%20Financeira&body=Ol%C3%A1%20Lu%C3%ADs%2C%20conheci%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20mentoria%20para%20transformar%20minha%20vida%20financeira%21"
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=luisholanda.educadorfinanceiro@gmail.com&su=Agendamento%20de%20Mentoria%20Financeira"
                         target="_blank" class="btn-email-gmail">
                         <i class="fa-solid fa-envelope"></i> E-mail
                     </a>
-                    <a href="https://www.instagram.com/luis.holanda3?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                        target="_blank" title="Instagram">
+                    <a href="https://www.instagram.com/luis.holanda3" target="_blank" title="Instagram">
                         <i class="fa-brands fa-instagram"></i> Instagram
                     </a>
-                    <a href="https://wa.me/5585992847982?text=Olá Luís, conheci seu site e gostaria de agendar uma mentoria para transformar minha vida financeira!."
+                    <a href="https://wa.me/5585992847982?text=Olá%20Luís,%20conheci%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20mentoria!"
                         target="_blank" title="WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="#" target="_blank" title="YouTube">
-                        <i class="fa-brands fa-youtube"></i> YouTube
                     </a>
                 </div>
             </div>
         </div>
 
         <div class="direitos-autorais">
-            <p>&copy; 2026 Luís Holanda Educação Financeira. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Luís Holanda Financial. Todos os direitos reservados.</p>
         </div>
     </footer>
+
     <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5585992847982?text=Olá Luís, conheci seu site e gostaria de agendar uma mentoria para transformar minha vida financeira!."
+    <a href="https://wa.me/5585992847982?text=Olá%20Luís,%20conheci%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20mentoria!"
         class="whatsapp-flutuante" target="_blank" aria-label="Contato pelo WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>

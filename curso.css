@@ -1,0 +1,593 @@
+/* ==========================================================
+   PLATAFORMA EAD HIGH-TECH & FUTURISTA (LUÍS HOLANDA ACADEMY)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+    --bg-profundo: #040906;
+    --card-glass: rgba(10, 26, 18, 0.7);
+    --card-glass-hover: rgba(16, 38, 27, 0.85);
+    --border-glass: rgba(243, 182, 31, 0.22);
+    
+    --gold-glow: #f3b61f;
+    --gold-light: #fbe396;
+    --green-glow: #00ff88;
+    --green-dark: #008a48;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a3c2b2;
+    --text-muted: #6b8a7a;
+    
+    --shadow-neon-gold: 0 0 25px rgba(243, 182, 31, 0.25);
+    --shadow-neon-green: 0 0 25px rgba(0, 255, 136, 0.25);
+    --radius-tech: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-profundo);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(243, 182, 31, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(0, 255, 136, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========================================================== */
+/* HEADER & NAVBAR PADRONIZADO                                 */
+/* ========================================================== */
+.cabecalho-principal {
+    background: rgba(4, 9, 6, 0.92) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 5%;
+    width: 100%;
+}
+
+.container-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* LOGO E FOTO DE PERFIL */
+.logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.foto-perfil-nav {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 1px solid var(--gold-glow) !important;
+    box-shadow: 0 0 10px rgba(243, 182, 31, 0.3) !important;
+    flex-shrink: 0 !important;
+}
+
+.texto-logo {
+    color: #ffffff !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    font-family: 'Bebas Neue', sans-serif !important;
+    letter-spacing: 1px !important;
+    line-height: 1.1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.texto-logo span {
+    color: var(--gold-glow) !important;
+    font-size: 0.75rem !important;
+    font-family: 'Montserrat', sans-serif !important;
+    letter-spacing: 2px !important;
+    font-weight: 500 !important;
+}
+
+/* NAV LINKS DESKTOP */
+.nav-menu ul {
+    display: flex !important;
+    list-style: none !important;
+    gap: 15px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+}
+
+.nav-menu a {
+    color: var(--text-secondary) !important;
+    text-decoration: none !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 8px 16px !important;
+    border-radius: 30px !important;
+    border: 1px solid transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-menu a:hover {
+    color: var(--gold-glow) !important;
+    border-color: var(--gold-glow) !important;
+    background-color: rgba(243, 182, 31, 0.08) !important;
+    box-shadow: 0 0 15px rgba(243, 182, 31, 0.2) !important;
+}
+
+.btn-contato-glow {
+    background: linear-gradient(135deg, rgba(243, 182, 31, 0.15) 0%, rgba(0, 255, 136, 0.05) 100%) !important;
+    border: 1px solid var(--gold-glow) !important;
+    color: var(--gold-glow) !important;
+    padding: 8px 20px !important;
+    border-radius: 30px !important;
+    box-shadow: var(--shadow-neon-gold) !important;
+}
+
+.btn-contato-glow:hover {
+    background: var(--gold-glow) !important;
+    color: #000000 !important;
+    box-shadow: 0 0 25px rgba(243, 182, 31, 0.6) !important;
+}
+
+/* MENU HAMBÚRGUER */
+.menu-hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--gold-glow);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ========================================================== */
+/* HERO & PROGRESSO                                           */
+/* ========================================================== */
+.curso-hero-futurista {
+    position: relative;
+    padding: 60px 8% 40px 8%;
+    text-align: center;
+}
+
+.badge-tech {
+    background: rgba(0, 255, 136, 0.08);
+    border: 1px solid var(--green-glow);
+    color: var(--green-glow);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+.curso-hero-futurista h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.8rem;
+    color: #ffffff;
+    letter-spacing: 2.5px;
+    margin-bottom: 15px;
+    line-height: 1.05;
+}
+
+.curso-hero-futurista h1 span {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-glow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.curso-hero-futurista p {
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+    font-size: 1.08rem;
+}
+
+.card-progresso-ead {
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius-tech);
+    padding: 22px 28px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.progresso-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+}
+
+.progresso-info span {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.progresso-info strong {
+    color: var(--green-glow);
+}
+
+.barra-progresso-trilho {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.barra-progresso-preenchimento {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-glow) 0%, var(--green-glow) 100%);
+    border-radius: 20px;
+    transition: width 0.6s ease;
+}
+
+/* ========================================================== */
+/* GRID PLATAFORMA E SIDEBAR                                  */
+/* ========================================================== */
+.plataforma-container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 35px;
+    padding: 40px 8% 80px 8%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.trilha-sidebar {
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius-tech);
+    padding: 25px 20px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--gold-glow);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+}
+
+.sidebar-header h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.trilha-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-modulo-futurista {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item-modulo-futurista:hover {
+    background: var(--card-glass-hover);
+    border-color: rgba(243, 182, 31, 0.3);
+}
+
+.item-modulo-futurista.ativo {
+    background: rgba(0, 255, 136, 0.08);
+    border-color: var(--green-glow);
+}
+
+.item-modulo-futurista.bloqueado {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.item-modulo-futurista.bloqueado:hover {
+    transform: none;
+    border-color: transparent;
+}
+
+.mod-status {
+    color: var(--text-muted);
+}
+
+.item-modulo-futurista.ativo .mod-status {
+    color: var(--green-glow);
+}
+
+.num-mod {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--gold-glow);
+}
+
+.tit-mod {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ========================================================== */
+/* CONTEÚDO EAD E QUESTÕES                                    */
+/* ========================================================== */
+.painel-modulo-futurista {
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius-tech);
+    padding: 40px;
+}
+
+.tag-modulo-num {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--green-glow);
+    background: rgba(0, 255, 136, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.modulo-header-tech h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin: 0 0 25px 0;
+}
+
+.card-versiculo-futurista {
+    background: rgba(0, 0, 0, 0.45);
+    border-left: 4px solid var(--gold-glow);
+    padding: 24px 28px;
+    border-radius: 0 var(--radius-tech) var(--radius-tech) 0;
+    display: flex;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.icone-versiculo {
+    color: var(--gold-glow);
+    font-size: 1.5rem;
+}
+
+.texto-versiculo strong {
+    color: var(--gold-glow);
+    font-size: 0.88rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.texto-versiculo p {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+.exercicios-bloco-futurista h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--gold-glow);
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+}
+
+.pergunta-card-tech {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 22px 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.pergunta-titulo {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.input-tech {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.input-tech:focus {
+    border-color: var(--gold-glow);
+    box-shadow: 0 0 15px rgba(243, 182, 31, 0.25);
+}
+
+.opcoes-radio-tech {
+    display: flex;
+    gap: 30px;
+    margin-top: 12px;
+}
+
+.opcoes-radio-tech label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.opcoes-radio-tech input[type="radio"] {
+    accent-color: var(--gold-glow);
+    width: 18px;
+    height: 18px;
+}
+
+.gabarito-inline {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-corrigir-tech {
+    background: linear-gradient(135deg, var(--gold-glow) 0%, #d49a0d 100%);
+    color: #000000;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-neon-gold);
+}
+
+.btn-proximo-tech {
+    background: linear-gradient(135deg, var(--green-glow) 0%, var(--green-dark) 100%);
+    color: #000000;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    cursor: pointer;
+    float: right;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-neon-green);
+    margin-top: 25px;
+}
+
+.flashcard-estudo {
+    background: rgba(243, 182, 31, 0.06);
+    border: 1px dashed var(--gold-glow);
+    border-radius: var(--radius-tech);
+    padding: 22px 25px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 35px 0 20px 0;
+}
+
+.flashcard-estudo i {
+    color: var(--gold-glow);
+    font-size: 1.8rem;
+}
+
+.flashcard-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--gold-glow);
+    display: block;
+}
+
+/* ========================================================== */
+/* RESPONSIVIDADE MOBILE E TABLET                             */
+/* ========================================================== */
+@media (max-width: 968px) {
+    .menu-hamburguer {
+        display: block !important;
+    }
+
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(4, 9, 6, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom: 2px solid var(--gold-glow) !important;
+        display: none !important;
+        padding: 20px 0 !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .nav-menu.ativo {
+        display: block !important;
+    }
+
+    .nav-menu ul {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+
+    .nav-menu a {
+        width: 80% !important;
+        justify-content: center !important;
+    }
+
+    .plataforma-container {
+        grid-template-columns: 1fr;
+        padding: 20px 4% 60px 4%;
+    }
+
+    .curso-hero-futurista h1 {
+        font-size: 2.3rem;
+    }
+
+    .trilha-sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .painel-modulo-futurista {
+        padding: 25px 18px;
+    }
+
+    .btn-corrigir-tech, .btn-proximo-tech {
+        width: 100%;
+        justify-content: center;
+        float: none;
+    }
+}

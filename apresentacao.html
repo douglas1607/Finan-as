@@ -7,14 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="style.css">
 
-    <title>APRESENTAÇÃO</title>
+    <title>Apresentação do Método — Luís Holanda</title>
 </head>
 
 <body>
@@ -34,39 +33,88 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Links de Navegação -->
+            <!-- Links de Navegação com efeito reluzente padronizado -->
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="index.html#feedback">Feedback</a></li>
-                    <li><a href="index.html#contato">Contato</a></li>
+                    <li><a href="index.html" class="link-nav-efeito">Início</a></li>
+                    <li><a href="sobre.html" class="link-nav-efeito">Sobre</a></li>
+                    <li><a href="index.html#feedback" class="link-nav-efeito">Feedback</a></li>
+                    <li><a href="index.html#contato" class="link-nav-efeito">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="secao-apresentacao-pagina">
-        <div class="container-apresentacao-pagina">
-            <!-- Lado Esquerdo: O Vídeo -->
-            <div class="video-apresentacao">
-                <iframe width="100%" height="450"
-                    src="https://www.youtube-nocookie.com/embed/oihjrqYwKvw?si=jep2NDLyHkLzs1rm"
-                    title="Vídeo de Apresentação" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+    <main class="secao-apresentacao-pagina">
+        <div class="container-apresentacao-conteudo">
+            
+            <div class="texto-topo-apresentacao">
+                <span class="tag-destaque">✦ MÉTODO EXCLUSIVO</span>
+                <h1>CONHEÇA A ESTRUTURA DA PROSPERIDADE</h1>
+                <p>Assista à apresentação e entenda como cada pilar se conecta para transformar a sua realidade financeira de forma definitiva.</p>
             </div>
-        </div>
 
-        <!-- Botões Corrigidos (Sem a tag <button> por fora e um abaixo do outro) -->
-        <div class="container-botoes-pilares">
-            <a href="pilar1.html" class="botao-pilar">Pilar 1</a>
-            <a href="pilar2.html" class="botao-pilar">Pilar 2</a>
-            <a href="pilar3.html" class="botao-pilar">Pilar 3</a>
-            <a href="pilar4.html" class="botao-pilar">Pilar 4</a>
+            <!-- Vídeo de Apresentação Expansivo (Estilo Cinema) -->
+            <div class="video-apresentacao-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube-nocookie.com/embed/oihjrqYwKvw?si=jep2NDLyHkLzs1rm"
+                        title="Vídeo de Apresentação - Luís Holanda" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Seção de Navegação Interativa para os 4 Pilares -->
+            <div class="container-pilares-apresentacao">
+                <h2>EXPLORE OS 4 PILARES DO MÉTODO</h2>
+                
+                <div class="grid-cards-pilares">
+                    <!-- Pilar 1 -->
+                    <a href="pilar1.html" class="card-pilar-apresentacao">
+                        <div class="icone-card-apresentacao"><i class="fa-solid fa-seedling"></i></div>
+                        <div class="info-card-apresentacao">
+                            <h3>Pilar 1: Semente</h3>
+                            <p>Corte de excessos e blindagem contra perdas invisíveis.</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right seta-card"></i>
+                    </a>
+
+                    <!-- Pilar 2 -->
+                    <a href="pilar2.html" class="card-pilar-apresentacao">
+                        <div class="icone-card-apresentacao"><i class="fa-solid fa-water"></i></div>
+                        <div class="info-card-apresentacao">
+                            <h3>Pilar 2: Regar</h3>
+                            <p>Manutenção, organização estratégica e gestão ativa de recursos.</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right seta-card"></i>
+                    </a>
+
+                    <!-- Pilar 3 -->
+                    <a href="pilar3.html" class="card-pilar-apresentacao">
+                        <div class="icone-card-apresentacao"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="info-card-apresentacao">
+                            <h3>Pilar 3: Espada</h3>
+                            <p>Proteção de patrimônio, disciplina rigorosa e blindagem mental.</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right seta-card"></i>
+                    </a>
+
+                    <!-- Pilar 4 -->
+                    <a href="pilar4.html" class="card-pilar-apresentacao">
+                        <div class="icone-card-apresentacao"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="info-card-apresentacao">
+                            <h3>Pilar 4: Expansão</h3>
+                            <p>Multiplicação de capital, construção patrimonial e legado duradouro.</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right seta-card"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </main>
 
     <script>
         const btnMenu = document.getElementById('btn-menu');
@@ -85,7 +133,6 @@
             });
         }
     </script>
-
 
 </body>
 

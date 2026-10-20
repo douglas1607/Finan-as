@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pilar1.css">
+    <link rel="stylesheet" href="curso.css">
+    <title>Plataforma EAD — Sabedoria Financeira</title>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO / NAVBAR PADRONIZADO -->
+    <header class="cabecalho-principal">
+        <div class="container-header">
+            <!-- Logo / Brand na Esquerda (Foto + Texto) -->
+            <a href="index.html" class="logo">
+                <img src="logo-educador-financeiro.png" alt="Luís Holanda" class="foto-perfil-nav">
+                <div class="texto-logo">
+                    Luís Holanda <span>Educação Financeira</span>
+                </div>
+            </a>
+
+            <!-- Botão Hambúrguer (Mobile) -->
+            <button class="menu-hamburguer" id="btn-menu" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Links de Navegação Padronizados -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="link-nav-efeito"><i class="fa-solid fa-house"></i> Início</a></li>
+                    <li><a href="sobre.html" class="link-nav-efeito"><i class="fa-solid fa-user"></i> Sobre</a></li>
+                    <li><a href="https://wa.me/5585992826206" target="_blank" class="btn-contato-glow"><i class="fa-brands fa-whatsapp"></i> Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO DASHBOARD FUTURISTA -->
+    <section class="curso-hero-futurista">
+        <div class="glow-bg"></div>
+        <div class="curso-hero-conteudo">
+            <div class="badge-tech"><i class="fa-solid fa-bolt"></i> MINI CURSO COMPLETO</div>
+            <h1>SABEDORIA FINANCEIRA <span>NA PALAVRA DE DEUS</span></h1>
+            <p>Princípios milenares aplicados com inteligência e gestão moderna para a sua liberdade financeira.</p>
+
+            <!-- BARRA DE PROGRESSO EAD -->
+            <div class="card-progresso-ead">
+                <div class="progresso-info">
+                    <span><i class="fa-solid fa-chart-line"></i> SEU PROGRESSO NO CURSO</span>
+                    <strong id="progresso-texto">10% CONCLUÍDO</strong>
+                </div>
+                <div class="barra-progresso-trilho">
+                    <div class="barra-progresso-preenchimento" id="barra-progresso" style="width: 10%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREA DA PLATAFORMA DE ENSINO -->
+    <main class="plataforma-container">
+        
+        <!-- TRILHA LATERAL DE MÓDULOS -->
+        <aside class="trilha-sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>TRILHA DE APRENDIZADO</h3>
+            </div>
+            <ul id="lista-modulos">
+                <li class="item-modulo-futurista ativo" onclick="mudarModulo(1)">
+                    <div class="mod-status"><i class="fa-solid fa-circle-play"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 01</span>
+                        <span class="tit-mod">Deus é o dono de tudo</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(2)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 02</span>
+                        <span class="tit-mod">Honrar com seus recursos</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(3)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 03</span>
+                        <span class="tit-mod">O Dízimo: Obediência</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(4)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 04</span>
+                        <span class="tit-mod">Deus prova o coração</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(5)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 05</span>
+                        <span class="tit-mod">Generosidade Alegre</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(6)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 06</span>
+                        <span class="tit-mod">Sabedoria contra a Dívida</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(7)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 07</span>
+                        <span class="tit-mod">Poupança e Reserva</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(8)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 08</span>
+                        <span class="tit-mod">Amor ao Dinheiro</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(9)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 09</span>
+                        <span class="tit-mod">Trabalho Honesto</span>
+                    </div>
+                </li>
+                <li class="item-modulo-futurista bloqueado" onclick="mudarModulo(10)">
+                    <div class="mod-status"><i class="fa-solid fa-lock"></i></div>
+                    <div class="mod-detalhes">
+                        <span class="num-mod">MÓDULO 10</span>
+                        <span class="tit-mod">Deus em Primeiro Lugar</span>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- ÁREA DO CONTEÚDO ATIVO -->
+        <section class="conteudo-principal-ead">
+
+            <!-- MÓDULO 1 -->
+            <article class="painel-modulo-futurista ativo" id="modulo-1">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 01 DE 10</span>
+                    <h2>DEUS É O DONO DE TUDO</h2>
+                    
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>SALMO 24:1</strong>
+                            <p>"Do Senhor é a terra e tudo o que nela há, o mundo e os que nela vivem."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercicios-bloco-futurista" id="quiz-mod-1">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    
+                    <div class="pergunta-card-tech" data-resposta="deus,senhor" data-gabarito-oficial="Deus (O Senhor)">
+                        <p class="pergunta-titulo">1. Segundo Salmo 24:1, de quem é a terra e tudo que nela existe?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="administrador,administradores,gestor,gerir" data-gabarito-oficial="Administradores (Gerir com responsabilidade)">
+                        <p class="pergunta-titulo">2. Qual é a nossa verdadeira função em relação aos recursos recebidos?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Tudo pertence a Deus)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: Posso fazer o que quiser com o meu dinheiro, pois é meu.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod1" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod1" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="sabedoria,honrar,economizar,poupar,cuidado" data-gabarito-oficial="Usar com sabedoria e sem excessos">
+                        <p class="pergunta-titulo">4. Cite uma mudança de atitude ao entender que Deus é o dono de tudo:</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="poupar,honesto,contas,desperdiçar,planejar" data-gabarito-oficial="Poupar, pagar contas em dia e ser honesto">
+                        <p class="pergunta-titulo">5. Como você pode ser um bom administrador nos pequenos valores?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(1)"><i class="fa-solid fa-check-double"></i> Validar Módulo 01</button>
+                    <div class="resultado-quiz-tech" id="resultado-1" style="display:none;"></div>
+                </div>
+
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Tudo vem de Deus, e é para Ele que gerimos."</p>
+                    </div>
+                </div>
+
+                <button class="btn-proximo-tech" onclick="mudarModulo(2)">Ir para o Módulo 02 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 2 -->
+            <article class="painel-modulo-futurista" id="modulo-2" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 02 DE 10</span>
+                    <h2>HONRAR A DEUS COM SEUS RECURSOS</h2>
+                    
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>PROVÉRBIOS 3:9</strong>
+                            <p>"Honra ao Senhor com os teus bens e com as primícias de toda a tua renda."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercicios-bloco-futurista" id="quiz-mod-2">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    
+                    <div class="pergunta-card-tech" data-resposta="honrar,bens,primicias" data-gabarito-oficial="Honrar com os bens e com as primícias">
+                        <p class="pergunta-titulo">1. Qual é o mandamento de Provérbios 3:9?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="primeiro,melhor" data-gabarito-oficial="Dar o primeiro e o melhor">
+                        <p class="pergunta-titulo">2. O que significa dar as primícias?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Deus vem em primeiro lugar)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: Dou a Deus o que sobrar depois de pagar as contas.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod2" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod2" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="bens,primicias" data-gabarito-oficial="Com os bens e com as primícias">
+                        <p class="pergunta-titulo">4. Quais são os dois caminhos que Provérbios 3:9 indica para honrarmos a Deus?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <div class="pergunta-card-tech" data-resposta="dizimo,oferta,primeiro" data-gabarito-oficial="Entregando o dízimo e a oferta primeiro">
+                        <p class="pergunta-titulo">5. Como podemos aplicar esse versículo no nosso dia a dia?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(2)"><i class="fa-solid fa-check-double"></i> Validar Módulo 02</button>
+                    <div class="resultado-quiz-tech" id="resultado-2" style="display:none;"></div>
+                </div>
+
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Honre a Deus com o primeiro, não com o resto."</p>
+                    </div>
+                </div>
+
+                <button class="btn-proximo-tech" onclick="mudarModulo(3)">Ir para o Módulo 03 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 3 -->
+            <article class="painel-modulo-futurista" id="modulo-3" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 03 DE 10</span>
+                    <h2>O DÍZIMO: RECONHECIMENTO E OBEDIÊNCIA</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>LEVÍTICO 27:30</strong>
+                            <p>"Todos os dízimos da terra pertencem ao Senhor; são santos ao Senhor."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-3">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="10%,10,dez" data-gabarito-oficial="10% da renda">
+                        <p class="pergunta-titulo">1. Que porcentagem da renda é considerada dízimo segundo a Palavra?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="senhor,deus" data-gabarito-oficial="Pertence ao Senhor">
+                        <p class="pergunta-titulo">2. Segundo Levítico 27:30, o dízimo é de quem?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="obediencia,voluntaria,generosidade" data-gabarito-oficial="Dízimo é obediência; oferta é generosidade voluntária">
+                        <p class="pergunta-titulo">3. Qual é a diferença entre dízimo e oferta?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Deus olha a intenção do coração)">
+                        <p class="pergunta-titulo">4. Verdadeiro ou Falso: Quem não dizima não pode ser abençoado.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q4_mod3" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q4_mod3" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="fe,gratidao,alegria" data-gabarito-oficial="Coração cheio de fé, gratidão e alegria">
+                        <p class="pergunta-titulo">5. Qual coração devemos ter ao entregar o dízimo?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(3)"><i class="fa-solid fa-check-double"></i> Validar Módulo 03</button>
+                    <div class="resultado-quiz-tech" id="resultado-3" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"O dízimo é reconhecer: Deus é a fonte de tudo."</p>
+                    </div>
+                </div>
+                <button class="btn-proximo-tech" onclick="mudarModulo(4)">Ir para o Módulo 04 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 4 -->
+            <article class="painel-modulo-futurista" id="modulo-4" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 04 DE 10</span>
+                    <h2>DEUS PROVA O CORAÇÃO NO DAR</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>MALAQUIAS 3:10</strong>
+                            <p>"Tragam todos os dízimos... Provai-me agora nisto, diz o Senhor, se eu não vos abrir as janelas do céu."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-4">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="provai-me,provai,dizimos" data-gabarito-oficial="'Provai-me agora nisto'">
+                        <p class="pergunta-titulo">1. Qual é o desafio que Deus faz em Malaquias 3:10?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="fiel,dizimo,obedecer" data-gabarito-oficial="Ser fiel e obedecer à Palavra">
+                        <p class="pergunta-titulo">2. O que precisamos fazer para que Deus abra as janelas do céu?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Nossa fidelidade aciona a promessa)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: Deus promete abençoar sem que precisemos fazer nossa parte.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod4" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod4" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="transborda,fartura,abundancia" data-gabarito-oficial="Bênção abundante que transborda">
+                        <p class="pergunta-titulo">4. O que significa 'não haver lugar suficiente para receber a bênção'?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="tesouro,coracao,confiamos" data-gabarito-oficial="Onde está o tesouro, está o coração">
+                        <p class="pergunta-titulo">5. Por que Deus escolheu as finanças para provar nosso coração?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(4)"><i class="fa-solid fa-check-double"></i> Validar Módulo 04</button>
+                    <div class="resultado-quiz-tech" id="resultado-4" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Seja fiel no pouco, e Deus te confiará muito."</p>
+                    </div>
+                </div>
+                <button class="btn-proximo-tech" onclick="mudarModulo(5)">Ir para o Módulo 05 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 5 -->
+            <article class="painel-modulo-futurista" id="modulo-5" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 05 DE 10</span>
+                    <h2>GENEROSIDADE E OFERTAS ALEGRES</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>2 CORÍNTIOS 9:7</strong>
+                            <p>"Cada um dê conforme determinou em seu coração... pois Deus ama quem dá com alegria."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-5">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="coracao,alegria,voluntario" data-gabarito-oficial="Segundo proposto no coração, sem tristeza">
+                        <p class="pergunta-titulo">1. Como devemos dar, segundo 2 Coríntios 9:7?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="alegria,alegremente" data-gabarito-oficial="Quem dá com alegria">
+                        <p class="pergunta-titulo">2. Deus ama quem dá de que forma?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Damos por amor e gratidão, não troca comercial)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: Quanto mais damos, mais Deus nos deve.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod5" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod5" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="amor,atitude,coracao" data-gabarito-oficial="Deus olha a atitude voluntária do coração">
+                        <p class="pergunta-titulo">4. Por que não devemos dar com tristeza ou por obrigação?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="sim,viuva,coracao" data-gabarito-oficial="Sim, a generosidade é a disposição do coração">
+                        <p class="pergunta-titulo">5. Uma pessoa com pouco dinheiro pode ser generosa? Explique:</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(5)"><i class="fa-solid fa-check-double"></i> Validar Módulo 05</button>
+                    <div class="resultado-quiz-tech" id="resultado-5" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Deus ama a quem dá com alegria."</p>
+                    </div>
+                </div>
+                <button class="btn-proximo-tech" onclick="mudarModulo(6)">Ir para o Módulo 06 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 6 -->
+            <article class="painel-modulo-futurista" id="modulo-6" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 06 DE 10</span>
+                    <h2>SABEDORIA CONTRA A DÍVIDA</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>PROVÉRBIOS 22:7</strong>
+                            <p>"O rico domina sobre o pobre, e o que toma emprestado é servo do que empresta."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-6">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="servo,escravo" data-gabarito-oficial="Servo">
+                        <p class="pergunta-titulo">1. Complete: 'O rico domina sobre o pobre, e o que toma emprestado é ______ do que empresta.'</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="liberdade,sujeicao,escravidao" data-gabarito-oficial="Perda de liberdade e sujeição">
+                        <p class="pergunta-titulo">2. Quais são os dois perigos das dívidas citados no versículo?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Exige extremo planejamento)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: Comprar no cartão de crédito é sempre a melhor opção.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod6" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod6" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="esperar,poupar,guardar" data-gabarito-oficial="Esperar, poupar primeiro e planejar">
+                        <p class="pergunta-titulo">4. O que você faria se precisasse de algo, mas não tivesse dinheiro no momento?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="orcamento,reserva,abaixo" data-gabarito-oficial="Orçamento mensal e reserva estratégica">
+                        <p class="pergunta-titulo">5. Cite uma estratégia para evitar contrair dívidas desnecessárias:</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(6)"><i class="fa-solid fa-check-double"></i> Validar Módulo 06</button>
+                    <div class="resultado-quiz-tech" id="resultado-6" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Liberdade financeira = viver sem dever."</p>
+                    </div>
+                </div>
+                <button class="btn-proximo-tech" onclick="mudarModulo(7)">Ir para o Módulo 07 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 7 -->
+            <article class="painel-modulo-futurista" id="modulo-7" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 07 DE 10</span>
+                    <h2>O VALOR DA POUPANÇA E DA RESERVA</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>PROVÉRBIOS 10:5</strong>
+                            <p>"O que ajunta no verão é filho prudente, mas o que dorme na sega é filho que envergonha."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-7">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="verao,juntam,fartura" data-gabarito-oficial="Os que juntam na época de fartura">
+                        <p class="pergunta-titulo">1. Quem são os filhos prudentes segundo Provérbios 10:5?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="escassez,imprevistos,futuro" data-gabarito-oficial="Para se preparar contra os dias de escassez">
+                        <p class="pergunta-titulo">2. Por que devemos poupar mesmo quando não precisamos?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Poupar é sabedoria ensinada por Deus)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: Não preciso poupar porque Deus vai cuidar de mim.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod7" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod7" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="imprevistos,emergencia,meses" data-gabarito-oficial="Valor equivalente a 3 a 6 meses de despesas para emergências">
+                        <p class="pergunta-titulo">4. O que é uma reserva de emergência e para que serve?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="guardar,separar,percentual" data-gabarito-oficial="Separar um valor fixo assim que receber">
+                        <p class="pergunta-titulo">5. Qual é o primeiro passo para começar a juntar dinheiro?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(7)"><i class="fa-solid fa-check-double"></i> Validar Módulo 07</button>
+                    <div class="resultado-quiz-tech" id="resultado-7" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Poupar é fé em ação e sabedoria hoje."</p>
+                    </div>
+                </div>
+                <button class="btn-proximo-tech" onclick="mudarModulo(8)">Ir para o Módulo 08 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 8 -->
+            <article class="painel-modulo-futurista" id="modulo-8" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 08 DE 10</span>
+                    <h2>CUIDADO COM O AMOR AO DINHEIRO</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>1 TIMÓTEO 6:10</strong>
+                            <p>"Pois o amor ao dinheiro é a raiz de todos os males. Algumas pessoas desviaram-se da fé por cobiça."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-8">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="amor,cobiça" data-gabarito-oficial="O amor ao dinheiro">
+                        <p class="pergunta-titulo">1. O que é raiz de todos os males, segundo 1 Timóteo 6:10?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (O dinheiro é neutro, o erro é a idolatria)">
+                        <p class="pergunta-titulo">2. Verdadeiro ou Falso: Ter dinheiro é pecado.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q2_mod8" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q2_mod8" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="desvio,ansiedade,dores" data-gabarito-oficial="Desvio da fé, ansiedade e destruição familiar">
+                        <p class="pergunta-titulo">3. Quais são as consequências de colocar o dinheiro em primeiro lugar?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="ferramenta,serviço,ajudar" data-gabarito-oficial="Tratando-o como ferramenta de serviço">
+                        <p class="pergunta-titulo">4. Como usar o dinheiro sem deixar que ele passe a dominar você?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="administrador,gestor" data-gabarito-oficial="Administrador (Gestor dos recursos de Deus)">
+                        <p class="pergunta-titulo">5. Qual deve ser a nossa relação com o dinheiro: dono ou administrador?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(8)"><i class="fa-solid fa-check-double"></i> Validar Módulo 08</button>
+                    <div class="resultado-quiz-tech" id="resultado-8" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Dinheiro é ferramenta, não senhor."</p>
+                    </div>
+                </div>
+                <button class="btn-proximo-tech" onclick="mudarModulo(9)">Ir para o Módulo 09 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 9 -->
+            <article class="painel-modulo-futurista" id="modulo-9" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 09 DE 10</span>
+                    <h2>TRABALHO HONESTO E ESFORÇO</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>PROVÉRBIOS 28:20</strong>
+                            <p>"O homem fiel será ricamente abençoado, mas quem tenta enriquecer depressa não ficará sem punição."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-9">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="puniçao,culpa" data-gabarito-oficial="Não ficará sem culpa ou punição">
+                        <p class="pergunta-titulo">1. O que diz Provérbios 28:20 sobre quem quer enriquecer depressa?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="armadilha,cilada,risco" data-gabarito-oficial="São atalhos perigosos que destroem o patrimônio">
+                        <p class="pergunta-titulo">2. Por que devemos evitar promessas de dinheiro fácil e rápido?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (O trabalho é digno e honroso)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: O trabalho é uma maldição e devemos evitar.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod9" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod9" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="aprova,honra,abençoa" data-gabarito-oficial="Ele aprova e abençoa o esforço honesto">
+                        <p class="pergunta-titulo">4. Como Deus vê quem faz as coisas com excelência e honestidade?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="etica,carater,esforço" data-gabarito-oficial="Ambição cresce com ética; ganância sacrifica valores">
+                        <p class="pergunta-titulo">5. Qual é a diferença entre ambição e querer ganhar dinheiro de qualquer jeito?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(9)"><i class="fa-solid fa-check-double"></i> Validar Módulo 09</button>
+                    <div class="resultado-quiz-tech" id="resultado-9" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Construa devagar, mas construa para sempre."</p>
+                    </div>
+                </div>
+                <button class="btn-proximo-tech" onclick="mudarModulo(10)">Ir para o Módulo 10 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+
+            <!-- MÓDULO 10 -->
+            <article class="painel-modulo-futurista" id="modulo-10" style="display: none;">
+                <div class="modulo-header-tech">
+                    <span class="tag-modulo-num">MÓDULO 10 DE 10</span>
+                    <h2>COLOCAR DEUS EM PRIMEIRO LUGAR</h2>
+                    <div class="card-versiculo-futurista">
+                        <div class="icone-versiculo"><i class="fa-solid fa-bookmark"></i></div>
+                        <div class="texto-versiculo">
+                            <strong>MATEUS 6:33</strong>
+                            <p>"Busquem em primeiro lugar o Reino de Deus e a sua justiça, e todas estas coisas lhes serão acrescentadas."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercicios-bloco-futurista" id="quiz-mod-10">
+                    <h3><i class="fa-solid fa-terminal"></i> DESAFIO INTERATIVO</h3>
+                    <div class="pergunta-card-tech" data-resposta="reino,justiça" data-gabarito-oficial="O Reino de Deus e a sua justiça">
+                        <p class="pergunta-titulo">1. O que Jesus nos diz para buscar primeiro em Mateus 6:33?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="cuida,providencia,supre" data-gabarito-oficial="Ele cuida e providencia nossas necessidades reais">
+                        <p class="pergunta-titulo">2. O que acontece quando colocamos Deus em primeiro lugar?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="falso" data-gabarito-oficial="Falso (Trabalhamos com fé e sem ansiedade)">
+                        <p class="pergunta-titulo">3. Verdadeiro ou Falso: Se eu buscar primeiro a Deus, não precisarei trabalhar.</p>
+                        <div class="opcoes-radio-tech">
+                            <label><input type="radio" name="q3_mod10" value="verdadeiro"> <span>Verdadeiro</span></label>
+                            <label><input type="radio" name="q3_mod10" value="falso"> <span>Falso</span></label>
+                        </div>
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="necessidades,cuida,supre" data-gabarito-oficial="Deus suprirá o essencial no tempo certo">
+                        <p class="pergunta-titulo">4. O que significa 'todas estas coisas vos serão acrescentadas'?</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <div class="pergunta-card-tech" data-resposta="primeiro,honrar,confiar" data-gabarito-oficial="Compromisso pessoal em colocar Deus no topo das finanças">
+                        <p class="pergunta-titulo">5. Escreva um pequeno compromisso sobre como aplicar essa verdade nas suas finanças:</p>
+                        <input type="text" class="input-tech" placeholder="Escreva sua resposta aqui...">
+                    </div>
+                    <button class="btn-corrigir-tech" onclick="corrigirQuiz(10)"><i class="fa-solid fa-check-double"></i> Validar Módulo 10</button>
+                    <div class="resultado-quiz-tech" id="resultado-10" style="display:none;"></div>
+                </div>
+                <div class="flashcard-estudo">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <span class="flashcard-label">INSIGHT CHAVE</span>
+                        <p>"Deus primeiro, e o resto Ele providencia."</p>
+                    </div>
+                </div>
+
+                <div class="conclusao-curso-bloco" style="margin-top: 35px; background: rgba(0, 255, 136, 0.05); border: 2px dashed #00ff88; padding: 30px; border-radius: 12px; text-align: center;">
+                    <h3 style="color: #00ff88; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 10px;"><i class="fa-solid fa-award"></i> PARABÉNS! VOCÊ CONCLUIU O CURSO</h3>
+                    <p style="color: #ffffff; font-style: italic; margin-bottom: 20px;">"Que sua vida seja transformada pela Palavra. Lembre-se: o dinheiro é uma ferramenta, mas Deus é a fonte." — Luís Holanda</p>
+                    <a href="https://wa.me/5585992826206?text=Olá%20Luís,%20concluí%20o%20Mini%20Curso%20de%20Sabedoria%20Financeira%20na%20Palavra%20de%20Deus!" target="_blank" class="btn-whatsapp-conclusao" style="background: #25D366; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block;">
+                        <i class="fa-brands fa-whatsapp"></i> Informar Conclusão ao Educador
+                    </a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- SCRIPT DO MENU HAMBÚRGUER & EAD -->
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (btnMenu && navMenu) {
+            btnMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('ativo');
+            });
+
+            const linksMenu = document.querySelectorAll('.nav-menu a');
+            linksMenu.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('ativo');
+                });
+            });
+        }
+    </script>
+    <script src="curso.js"></script>
+</body>
+
+</html>

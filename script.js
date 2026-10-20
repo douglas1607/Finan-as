@@ -1,6 +1,36 @@
-// ==========================================================
-// 1. MONITORAMENTO E DIRECIONAMENTO DO BOTÃO DE WHATSAPP (CTA)
-// ==========================================================
+// ==========================================
+// 1. EXPANSÃO DINÂMICA DOS CARDS DOS PILARES (ACCORDION GRID)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const cardsFundamento = document.querySelectorAll('.card-fundamento');
+
+    if (cardsFundamento.length > 0) {
+        cardsFundamento.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Evita conflito caso o usuário clique em elementos de acordeão internos (<details> ou <summary>)
+                if (e.target.tagName === 'SUMMARY' || e.target.tagName === 'DETAILS' || e.target.closest('details')) {
+                    return;
+                }
+
+                // Se o card já estiver expandido, recolhe ao clicar novamente
+                if (this.classList.contains('expandido')) {
+                    this.classList.remove('expandido');
+                    return;
+                }
+
+                // Fecha os outros cards para manter um comportamento limpo na linha
+                cardsFundamento.forEach(c => c.classList.remove('expandido'));
+
+                // Expande o card clicado
+                this.classList.add('expandido');
+            });
+        });
+    }
+});
+
+// ==========================================
+// 2. MONITORAMENTO E DIRECIONAMENTO DO BOTÃO DE WHATSAPP (CTA)
+// ==========================================
 const btnComecarAgora = document.getElementById('btn-comecar-agora');
 
 if (btnComecarAgora) {
@@ -11,9 +41,9 @@ if (btnComecarAgora) {
     });
 }
 
-// ==========================================================
-// 2. LÓGICA DAS 4 FERRAMENTAS FINANCEIRAS INTERATIVAS
-// ==========================================================
+// ==========================================
+// 3. LÓGICA DAS 4 FERRAMENTAS FINANCEIRAS INTERATIVAS
+// ==========================================
 
 // --- CALCULADORA DE JUROS COMPOSTOS ---
 const btnJuros = document.getElementById('btn-juros');
@@ -131,9 +161,9 @@ if (btnDesafio) {
     });
 }
 
-// ==========================================================
-// 3. SENSOR DE ANIMAÇÃO AO ROLAR A PÁGINA (SCROLL)
-// ==========================================================
+// ==========================================
+// 4. SENSOR DE ANIMAÇÃO AO ROLAR A PÁGINA (SCROLL)
+// ==========================================
 document.addEventListener("DOMContentLoaded", function () {
     const elementosParaAnimar = document.querySelectorAll('.efeito-flutuar');
     const configuracaoSensor = {
@@ -156,9 +186,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// ==========================================================
-// 4. DIAGNÓSTICO FINANCEIRO INTELIGENTE COM CHOQUE E PIZZA
-// ==========================================================
+// ==========================================
+// 5. DIAGNÓSTICO FINANCEIRO INTELIGENTE COM CHOQUE E PIZZA
+// ==========================================
 const blocosPerguntas = document.querySelectorAll(".pergunta-bloco");
 const divCarregando = document.getElementById("passo-carregando");
 const divResultado = document.getElementById("passo-resultado");
@@ -166,15 +196,14 @@ const spanNumAtual = document.getElementById("pergunta-atual-numero");
 const containerProgresso = document.querySelector(".quiz-progresso");
 
 let pontosCategorias = {
-    gastos: 0,      // Max: 12 pontos (4 perguntas)
-    reserva: 0,     // Max: 9 pontos (3 perguntas)
-    investimento: 0 // Max: 9 pontos (3 perguntas)
+    gastos: 0,      
+    reserva: 0,     
+    investimento: 0 
 };
 let totalPontosGlobal = 0;
-let instanciaGrafico = null; // Guarda a referência do gráfico para limpá-lo se reiniciar
+let instanciaGrafico = null;
 
 if (blocosPerguntas.length > 0) {
-    // Garante que o carregador e resultados comecem estritamente escondidos no carregamento inicial da página
     if (divCarregando) divCarregando.style.display = "none";
     if (divResultado) divResultado.style.display = "none";
 
@@ -185,29 +214,26 @@ if (blocosPerguntas.length > 0) {
                 const pontos = parseInt(botao.getAttribute("data-points"));
                 const categoria = pergunta.getAttribute("data-categoria");
 
-                // Soma pontuação na categoria correspondente
                 pontosCategorias[categoria] += pontos;
                 totalPontosGlobal += pontos;
 
                 const stepAtual = parseInt(pergunta.getAttribute("data-step"));
-                pergunta.style.display = "none"; // Esconde a atual
+                pergunta.style.display = "none";
 
                 const proximaPergunta = document.querySelector(`.pergunta-bloco[data-step="${stepAtual + 1}"]`);
 
                 if (proximaPergunta) {
-                    proximaPergunta.style.display = "block"; // Mostra a próxima
+                    proximaPergunta.style.display = "block";
                     if (spanNumAtual) {
                         spanNumAtual.textContent = stepAtual + 1;
                     }
                 } else {
-                    // Final do diagnóstico! Oculta o contador e ativa o processamento
                     if (containerProgresso) containerProgresso.style.display = "none";
                     if (divCarregando) divCarregando.style.display = "block";
 
-                    // Simula processamento da IA por 1.8 segundos
                     setTimeout(() => {
                         if (divCarregando) divCarregando.style.display = "none";
-                        if (divResultado) divResultado.style.display = "block"; // Agora revela de verdade só aqui!
+                        if (divResultado) divResultado.style.display = "block";
 
                         calcularEExibirResultado(totalPontosGlobal, pontosCategorias);
                     }, 1800);
@@ -221,23 +247,15 @@ function calcularEExibirResultado(pontosTotais, scores) {
     let perfil = "";
     let conselho = "";
 
-    // ALGORITMO DE DISTRIBUIÇÃO REAL DO DINHEIRO (CONVERSÃO EM CHOQUE)
-    // Gastos: Quanto menor o score, maior é a fatia engolida de gastos descontrolados (até 95%)
     let taxaGastos = 100 - ((scores.gastos - 4) * 5.6);
-
-    // Reserva: Relacionada diretamente com a proteção (de 0% a ~20%)
     let taxaReserva = (scores.reserva - 3) * 3.3;
-
-    // Investimento: Relacionada diretamente com poupar e planejar o futuro (de 0% a ~30%)
     let taxaInvestimento = (scores.investimento - 3) * 4.1;
 
-    // Ajuste matemático para garantir fechamento perfeito em 100%
     let somaTemporaria = taxaGastos + taxaReserva + taxaInvestimento;
     let percentualGastos = Math.round((taxaGastos / somaTemporaria) * 100);
     let percentualReserva = Math.round((taxaReserva / somaTemporaria) * 100);
     let percentualInvestimento = 100 - (percentualGastos + percentualReserva);
 
-    // Lógica estruturada de conselhos por faixa de pontuação (10 a 30 pontos)
     if (pontosTotais <= 15) {
         perfil = "Diagnóstico: Escassez Crítica (Vivendo no Limite)";
         conselho = "Você se encontra na zona de sobrevivência imediata. O seu orçamento está quase 100% comprometido com o seu presente, sem nenhuma gordura de proteção e absolutamente zero preparo para as próximas décadas. É urgente aplicar o método do Luís para reestruturar suas contas, fechar as torneiras de gastos invisíveis e começar a construir seu amanhã.";
@@ -255,10 +273,8 @@ function calcularEExibirResultado(pontosTotais, scores) {
     if (h2Resultado) h2Resultado.textContent = perfil;
     if (pConselho) pConselho.textContent = conselho;
 
-    // CONSTRUÇÃO E RENDERIZAÇÃO DO GRÁFICO (CHART.JS)
     const ctx = document.getElementById('graficoPizza');
     if (ctx) {
-        // Se já existir uma instância do gráfico criada anteriormente, destrói para evitar bugs visuais
         if (instanciaGrafico) {
             instanciaGrafico.destroy();
         }
@@ -274,9 +290,9 @@ function calcularEExibirResultado(pontosTotais, scores) {
                 datasets: [{
                     data: [percentualGastos, percentualReserva, percentualInvestimento],
                     backgroundColor: [
-                        '#a31c1c',  // Vermelho escuro/alerta para gastos engolindo o orçamento
-                        '#0b4d2a',  // Verde Old Money (Segurança)
-                        '#f3b61f'   // Dourado do site (Futuro/Investimentos)
+                        '#a31c1c',  
+                        '#0b4d2a',  
+                        '#f3b61f'   
                     ],
                     borderColor: 'rgba(255, 255, 255, 0.2)',
                     borderWidth: 1.5
@@ -303,7 +319,6 @@ function calcularEExibirResultado(pontosTotais, scores) {
     }
 }
 
-// Permite resetar e refazer o quiz
 function reiniciarQuiz() {
     if (divResultado) divResultado.style.display = "none";
     if (divCarregando) divCarregando.style.display = "none";
@@ -311,7 +326,6 @@ function reiniciarQuiz() {
     pontosCategorias = { gastos: 0, reserva: 0, investimento: 0 };
     totalPontosGlobal = 0;
 
-    // Reseta visibilidade dos passos
     blocosPerguntas.forEach((p, index) => {
         if (index === 0) {
             p.style.display = "block";
@@ -327,15 +341,15 @@ function reiniciarQuiz() {
 const btnMenu = document.getElementById('btn-menu');
 const navMenu = document.getElementById('nav-menu');
 
-// Alterna a classe 'ativo' ao clicar no botão das 3 listrinhas
-btnMenu.addEventListener('click', () => {
-    navMenu.classList.toggle('ativo');
-});
-
-// Fecha o menu automaticamente quando o usuário clica em qualquer link
-const linksMenu = document.querySelectorAll('.nav-menu a');
-linksMenu.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('ativo');
+if (btnMenu && navMenu) {
+    btnMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('ativo');
     });
-});
+
+    const linksMenu = document.querySelectorAll('.nav-menu a');
+    linksMenu.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('ativo');
+        });
+    });
+}

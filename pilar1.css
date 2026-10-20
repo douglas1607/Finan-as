@@ -1,17 +1,33 @@
+/* ==========================================================
+   PÁGINAS DE PILARES — HIGH-TECH & FUTURISTA (LUÍS HOLANDA)
+   Design System: Glassmorphic Old Money & Cyber Glow
+   ========================================================== */
+
 /* ==========================================
-   1. VARIÁVEIS DE CORES E IDENTIDADE
+   1. IMPORTAÇÕES E VARIÁVEIS LOCAIS (DESIGN SYSTEM)
    ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
 :root {
-    --verde-escuro-profundo: #051c14;
-    --verde-principal: #0b4d2a;
-    --verde-suave: #a7ffd5;
-    --verde-card: #0b2d21;
-    --dourado-brilhante: #f3b61f;
-    --dourado-suave: #d4a373;
-    --branco-vidro: rgba(255, 255, 255, 0.05);
-    --borda-vidro: rgba(255, 255, 255, 0.1);
-    --texto-claro: #f4f7f5;
-    --texto-mutado: #b3c7bc;
+    --bg-profundo: #040906;
+    --bg-secundario: #08140e;
+    --card-glass: rgba(10, 26, 18, 0.7);
+    --card-glass-hover: rgba(16, 38, 27, 0.88);
+    --border-glass: rgba(243, 182, 31, 0.22);
+    
+    --gold-glow: #f3b61f;
+    --gold-light: #fbe396;
+    --green-glow: #00ff88;
+    --green-dark: #008a48;
+    --red-alert: #ff4d4d;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a3c2b2;
+    --text-muted: #6b8a7a;
+    
+    --shadow-neon-gold: 0 0 25px rgba(243, 182, 31, 0.25);
+    --shadow-neon-green: 0 0 25px rgba(0, 255, 136, 0.25);
+    --radius-tech: 12px;
 }
 
 /* ==========================================
@@ -24,24 +40,29 @@
 }
 
 body {
-    background: linear-gradient(to right, var(--verde-escuro-profundo), #71a450);
-    color: var(--texto-claro);
+    background-color: var(--bg-profundo);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(243, 182, 31, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-primary);
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
 /* ==========================================
-   3. MENU DE NAVEGAÇÃO (<nav class="menu">)
+   3. MENU DE NAVEGAÇÃO SUPERIOR (<nav class="menu">)
    ========================================== */
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 8%;
-    background-color: rgba(5, 28, 20, 0.4);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--borda-vidro);
+    padding: 18px 8%;
+    background: rgba(4, 9, 6, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,33 +76,48 @@ body {
 
 .logo h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
-    color: var(--dourado-brilhante);
-    letter-spacing: 1px;
+    font-size: 2.1rem;
+    color: var(--text-primary);
+    letter-spacing: 1.5px;
+}
+
+.logo h2 span {
+    color: var(--gold-glow);
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: rgba(243, 182, 31, 0.12);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(243, 182, 31, 0.3);
+    margin-left: 8px;
 }
 
 .menu-links {
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 
 .menu-links a {
-    color: var(--texto-claro);
+    color: var(--text-secondary);
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 1px;
     padding: 8px 16px;
-    border-radius: 5px;
+    border-radius: 30px;
     border: 1px solid transparent;
     transition: all 0.3s ease;
 }
 
 .menu-links a:hover {
-    color: var(--dourado-brilhante);
-    border-color: var(--dourado-brilhante);
-    background-color: rgba(243, 182, 31, 0.05);
+    color: var(--gold-glow);
+    border-color: var(--gold-glow);
+    background-color: rgba(243, 182, 31, 0.08);
+    transform: translateY(-2px);
 }
 
 .menu-links .icone-menu {
@@ -89,7 +125,7 @@ body {
 }
 
 /* ==========================================
-   4. INTRODUÇÃO (<section class="introducao">)
+   4. SEÇÃO DE INTRODUÇÃO (<section class="introducao">)
    ========================================== */
 .introducao {
     padding: 80px 8% 60px 8%;
@@ -98,9 +134,10 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* Bloco da Esquerda (Textos) */
 .bloco-texto-intro {
     flex: 1;
     min-width: 300px;
@@ -110,93 +147,106 @@ body {
 
 .introducao h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 6rem;
-    color: var(--dourado-brilhante);
+    font-size: 4.5rem;
+    color: var(--gold-glow);
     line-height: 1;
-    margin-bottom: 10px;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 25px rgba(243, 182, 31, 0.3);
 }
 
 .introducao h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    color: var(--texto-claro);
+    color: var(--text-primary);
     margin-bottom: 15px;
 }
 
 .subtitulo-pilar {
-    font-size: 1.2rem;
-    color: var(--texto-mutado);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
     margin-bottom: 30px;
 }
 
 .pontos-chave {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .pontos-chave p {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    color: var(--text-primary);
 }
 
 .pontos-chave i {
-    color: var(--dourado-brilhante);
+    color: var(--green-glow);
     font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
 }
 
-/* Bloco da Direita (Logo do Educador Financeiro) */
+/* CONTAINER E LOGO DOS PILARES (SEM FUNDO + GLOW ELEGANTE) */
 .bloco-logo-intro {
     flex: 1;
     min-width: 280px;
-    max-width: 50%;
+    max-width: 45%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
-/* Aumento do tamanho da imagem da logo */
 .logo-introducao {
     width: 100%;
-    max-width: 500px; /* Aumentado para destacar mais a imagem */
+    max-width: 420px;
     height: auto;
-    filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.5));
-    transition: transform 0.3s ease;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    /* Efeito de brilho flutuante sem caixa escura em volta */
+    filter: drop-shadow(0 0 25px rgba(243, 182, 31, 0.35)) drop-shadow(0 0 10px rgba(0, 255, 136, 0.2));
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
 }
 
 .logo-introducao:hover {
-    transform: scale(1.03); /* Efeito sutil ao passar o mouse */
+    transform: scale(1.04) translateY(-4px);
+    filter: drop-shadow(0 0 35px rgba(243, 182, 31, 0.5)) drop-shadow(0 0 15px rgba(0, 255, 136, 0.3));
 }
 
 /* ==========================================
-   5. FRASE VISÃO (<h2 class="frase-visao">)
+   5. FRASE DE VISÃO CENTRALIZADA (<h2 class="frase-visao">)
    ========================================== */
 .frase-visao {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.2rem !important;
-    color: var(--dourado-brilhante) !important;
+    color: var(--gold-glow) !important;
     text-align: center;
     width: 100%;
-    margin-top: 50px !important;
-    letter-spacing: 1px;
-    border-top: 1px dashed rgba(255,255,255,0.1);
-    padding-top: 20px;
+    max-width: 1200px;
+    margin: 50px auto 0 auto !important;
+    letter-spacing: 1.5px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
 }
 
 /* ==========================================
-   6. SEÇÃO OBJETIVOS (<div class="objetivos">)
+   6. BLOCO DE OBJETIVOS (<div class="objetivos">)
    ========================================== */
 .objetivos {
     display: flex;
-    background-color: rgba(11, 77, 42, 0.2);
-    border-top: 1px solid var(--borda-vidro);
-    border-bottom: 1px solid var(--borda-vidro);
-    padding: 40px 8%;
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: var(--radius-tech);
+    padding: 35px 50px;
     align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .objetivo-bloco {
@@ -204,7 +254,7 @@ body {
 }
 
 .objetivos > div:nth-of-type(1) {
-    border-right: 2px solid var(--verde-suave);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-right: 40px;
 }
 
@@ -215,75 +265,123 @@ body {
 .objetivo-bloco h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
-    color: var(--dourado-suave);
-    margin-bottom: 5px;
+    color: var(--gold-glow);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
 }
 
 .frase-efeito {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-style: italic;
-    color: var(--dourado-brilhante);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
 /* ==========================================
-   7. SEÇÃO FUNDAMENTOS (<section class="fundamentos">)
+   7. SEÇÃO FUNDAMENTOS & ACCORDION GRID DINÂMICO
    ========================================== */
 .fundamentos {
-    padding: 80px 8%;
+    padding: 60px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .titulo-secao {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3rem;
     text-align: center;
-    color: var(--texto-claro);
-    margin-bottom: 50px;
-    letter-spacing: 1px;
+    color: var(--text-primary);
+    margin-bottom: 45px;
+    letter-spacing: 1.5px;
 }
 
+/* LAYOUT PADRÃO (Aplica para Pilares 3 e 4 - 4 Cards: 2 em cima, 2 embaixo) */
 .container-fundamentos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 25px;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    align-items: stretch; /* Garante que todos os cards da mesma linha tenham a MESMA ALTURA */
+}
+
+/* REGRA ESPECIAL PARA PILARES COM 3 CARDS (Pilares 1 e 2 - 3 lado a lado) */
+/* O CSS detecta automaticamente se o container tem exatamente 3 cards */
+.container-fundamentos:has(> .card-fundamento:nth-last-child(3):first-child) {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .card-fundamento {
-    background-color: var(--verde-card);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-top: 4px solid var(--dourado-brilhante);
-    border-radius: 8px;
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 4px solid var(--gold-glow);
+    border-radius: var(--radius-tech);
     padding: 30px 25px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    justify-content: space-between; /* Distribui o conteúdo interno por igual */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Força altura igual para evitar card maior que o outro */
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.card-fundamento:hover {
+    background: var(--card-glass-hover);
+    border-color: var(--gold-glow);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), var(--shadow-neon-gold);
+}
+
+/* ESTADO EXPANDIDO AO CLICAR (Ocupa toda a largura da linha) */
+.card-fundamento.expandido {
+    grid-column: 1 / -1 !important;
+    background: rgba(16, 38, 27, 0.95);
+    border-color: var(--green-glow);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), var(--shadow-neon-green);
+    transform: scale(1.01);
+}
+
+.card-fundamento.expandido::after {
+    content: '✦ EXPANDIDO';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--green-glow);
+    letter-spacing: 1.5px;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
 .topo-card {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     margin-bottom: 15px;
 }
 
 .icone-fundamento {
     font-size: 1.6rem;
-    color: var(--dourado-brilhante);
+    color: var(--gold-glow);
 }
 
 .card-fundamento h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.6rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    color: var(--text-primary);
 }
 
 .frase-fundamento {
     font-size: 0.95rem;
-    color: var(--dourado-suave);
+    color: var(--gold-light);
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -291,52 +389,56 @@ body {
 .lista-check {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 25px;
 }
 
 .lista-check p {
-    font-size: 0.9rem;
-    color: var(--texto-claro);
+    font-size: 0.92rem;
+    color: var(--text-secondary);
 }
 
 .lista-check i {
-    color: var(--verde-suave);
-    margin-right: 5px;
+    color: var(--green-glow);
+    margin-right: 8px;
 }
 
-/* Caixas internas dos cards */
+/* CAIXAS DE DESTAQUE DENTRO DOS CARDS */
 .caixa-destaque {
     padding: 15px;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-bottom: 12px;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .caixa-destaque h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 700;
     margin-bottom: 4px;
 }
 
 .pergunta {
-    background-color: rgba(20, 107, 62, 0.15);
-    border-left: 3px solid var(--verde-suave);
+    border-left: 3px solid var(--green-glow);
 }
 
-.pergunta h3 { color: var(--verde-suave); }
+.pergunta h3 { 
+    color: var(--green-glow); 
+}
 
 .pratica {
-    background-color: rgba(243, 182, 31, 0.08);
-    border-left: 3px solid var(--dourado-brilhante);
+    border-left: 3px solid var(--gold-glow);
     margin-bottom: 0;
 }
 
-.pratica h3 { color: var(--dourado-brilhante); }
+.pratica h3 { 
+    color: var(--gold-glow); 
+}
 
 /* ==========================================
-   8. ACCORDIONS DA SEÇÃO FUNDAMENTOS (DETAILS/SUMMARY)
+   8. ACCORDIONS INTERNOS (DETAILS / SUMMARY)
    ========================================== */
 .caixa-destaque[open] summary::-webkit-details-marker,
 .caixa-destaque summary::-webkit-details-marker {
@@ -351,106 +453,121 @@ body {
     font-weight: 700;
     cursor: pointer;
     user-select: none;
+    color: var(--text-primary);
 }
 
 .caixa-destaque summary:hover {
-    filter: brightness(1.2);
+    color: var(--gold-glow);
 }
 
 .caixa-destaque p {
     margin-top: 10px;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: var(--texto-claro);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
     animation: fadeIn 0.3s ease-in-out;
 }
 
 .seta-toggle {
     font-size: 0.75rem;
     transition: transform 0.3s ease;
+    color: var(--text-muted);
 }
 
 .caixa-destaque[open] .seta-toggle {
     transform: rotate(180deg);
-    color: var(--dourado-brilhante);
+    color: var(--gold-glow);
 }
 
 /* ==========================================
-   9. SEÇÃO OS 4 INIMIGOS (<section class="inimigos">)
+   9. SEÇÃO OS 4 INIMIGOS DO PILAR (<section class="inimigos">)
    ========================================== */
 .inimigos {
     padding: 80px 8%;
-    background-color: rgba(1, 10, 5, 0.4);
+    background: rgba(4, 9, 6, 0.6);
+    border-top: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
 }
 
 .titulo-secao-inimigos {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3rem;
     text-align: center;
-    color: #ff5555;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
+    color: var(--red-alert);
+    margin-bottom: 45px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
 }
 
 .container-inimigos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .card-inimigo {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 85, 85, 0.1);
-    border-radius: 8px;
+    background: var(--card-glass);
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: var(--radius-tech);
     padding: 30px 20px;
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .card-inimigo:hover {
-    border-color: #ff5555;
-    background-color: rgba(255, 85, 85, 0.02);
+    border-color: var(--red-alert);
+    background: rgba(255, 77, 77, 0.05);
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 77, 77, 0.2);
 }
 
 .card-inimigo i {
-    font-size: 2rem;
-    color: #ff5555;
+    font-size: 2.2rem;
+    color: var(--red-alert);
     margin-bottom: 15px;
 }
 
 .card-inimigo h3 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    color: var(--texto-claro);
+    font-size: 1.5rem;
+    color: var(--text-primary);
     margin-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
 .card-inimigo p {
-    font-size: 0.85rem;
-    color: var(--texto-mutado);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
 }
 
 /* ==========================================
-   10. RODAPÉ (<footer class="rodape">)
+   10. RODAPÉ INSTITUCIONAL (<footer class="rodape">)
    ========================================== */
 .rodape {
-    background-color: #030e0a;
-    padding: 60px 8% 20px 8%;
-    border-top: 1px solid var(--borda-vidro);
+    background: rgba(4, 9, 6, 0.95);
+    padding: 60px 8% 25px 8%;
+    border-top: 1px solid var(--border-glass);
 }
 
 .container-rodape {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .coluna-rodape h3 {
     font-family: 'Bebas Neue', sans-serif;
-    color: var(--dourado-brilhante);
+    color: var(--gold-glow);
     font-size: 1.5rem;
     margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 .coluna-rodape ul { 
@@ -458,60 +575,56 @@ body {
 }
 
 .coluna-rodape ul li { 
-    margin-bottom: 8px; 
+    margin-bottom: 10px; 
 }
 
 .coluna-rodape a {
-    color: var(--texto-mutado);
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .coluna-rodape a:hover { 
-    color: var(--dourado-brilhante); 
+    color: var(--gold-glow); 
 }
 
 .coluna-rodape p {
-    color: var(--texto-mutado);
+    color: var(--text-secondary);
     margin-bottom: 8px;
     font-size: 0.9rem;
 }
 
 .icones-redes { 
     margin-top: 15px; 
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .icones-redes a {
-    display: inline-block;
-    margin-right: 15px;
-    background-color: var(--branco-vidro);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(243, 182, 31, 0.08);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-glass);
 }
 
 .direitos-autorais {
     text-align: center;
-    border-top: 1px solid var(--borda-vidro);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 20px;
-    font-size: 0.8rem;
-    color: var(--texto-mutado);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* ==========================================
-   11. ANIMAÇÕES & EFETIOS DE SCROLL
+   11. ANIMAÇÕES & EFEITOS VISUAIS
    ========================================== */
-@keyframes revelarCard {
-    from {
-        opacity: 0;
-        transform: translateY(60px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -523,31 +636,20 @@ body {
     }
 }
 
-.card-fundamento {
-    animation: revelarCard linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 40%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.card-fundamento:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(243, 182, 31, 0.1);
-    border-color: var(--dourado-brilhante);
-}
-
 /* ==========================================
-   12. RESPONSIVIDADE (MEDIA QUERIES)
+   12. RESPONSIVIDADE TABLET (ATÉ 1024px)
    ========================================== */
 @media (max-width: 1024px) {
     .container-fundamentos { grid-template-columns: repeat(2, 1fr); }
     .container-inimigos { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ==========================================
+   13. RESPONSIVIDADE CELULAR / MOBILE (ATÉ 768px)
+   ========================================== */
 @media (max-width: 768px) {
-    /* Menu Mobile */
     .menu { 
-        padding: 15px 4%; 
+        padding: 15px 5%; 
     }
     .menu-links .texto-menu {
         display: none;
@@ -557,53 +659,72 @@ body {
         font-size: 1.2rem;
     }
     .menu-links a {
-        padding: 10px 15px;
+        padding: 8px 14px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
     
-    /* Introdução Mobile */
+    /* Introdução no Mobile: Foto no Topo, Texto Abaixo */
     .introducao { 
-        padding: 60px 4%; 
-        flex-direction: column-reverse;
+        padding: 40px 5% 30px 5%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 25px;
     }
-    .bloco-texto-intro {
-        max-width: 100%;
-        text-align: center;
-    }
-    .introducao h1 { 
-        font-size: 4.5rem; 
-    }
+
+    /* Foto do Pilar em 1ª Posição */
     .bloco-logo-intro {
+        order: 1;
         max-width: 100%;
+        display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-bottom: 10px;
     }
+
     .logo-introducao {
-        max-width: 85%; /* Ajustado para dar destaque adequado no celular */
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    /* Texto da Introdução em 2ª Posição */
+    .bloco-texto-intro {
+        order: 2;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .introducao h1 { 
+        font-size: 3.2rem; 
+    }
+
+    .pontos-chave p {
+        justify-content: center;
     }
     
-    /* Objetivos Mobile */
     .objetivos {
         flex-direction: column;
         gap: 25px;
         text-align: center;
+        padding: 25px 20px;
+        margin: 30px 20px;
     }
+
     .objetivos > div:nth-of-type(1) {
         border-right: none;
-        border-bottom: 2px solid var(--verde-suave);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding-right: 0;
         padding-bottom: 20px;
         width: 100%;
     }
+
     .objetivos > div:nth-of-type(2) { 
         padding-left: 0; 
         width: 100%; 
     }
 
-    /* Grids e Rodapé Mobile */
     .container-fundamentos { grid-template-columns: 1fr; }
     .container-inimigos { grid-template-columns: 1fr; }
     .container-rodape { flex-direction: column; gap: 30px; }
